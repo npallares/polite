@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* custom colors */
+  --color-primary: #5A67BA;
+  --color-complementary: #DEE1F1;
+  --color-main-white: #FBFBFB;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-main-stone-900:#AEAEAE;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-brand-900: #21dbaa;
+  --color-brand-800: #28fcc5;
+  --color-brand-700: #1cba90;
+  --color-brand-600: #19a480;
+  --color-brand-400: #0f6f56;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-complementary-900: #291f5c;
+  --color-complementary-800: #3d29aa;
+  --color-complementary-700: #5237e3;
+  --color-complementary-600: #7964e9;
+  --color-complementary-500: #a799f1;
+
+  --color-success-main: #00a35e;
+  --color-warning-main: #df7b02;
+  --color-info-main: #308af4;
+  --color-error-main: #de1929;
+  
+
+  /* custom brackpoints */
+  --breakpoint-1920: 1920px;
+  --breakpoint-1366: 1366px;
+  --breakpoint-1024: 1024px;
+  --breakpoint-744: 744px;
+  --breakpoint-375: 375px;
+  --breakpoint-100: 100px;
 }
