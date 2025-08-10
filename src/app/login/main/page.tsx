@@ -10,7 +10,7 @@ const mainPage = () => {
         <div className="flex justify-center items-center w-full h-15 hover:bg-complementary p-6 cursor-pointer">
           <Link
             className="flex flex-1 items-center mr-2"
-            href="/dashboard/main"
+            href="/dashboard/license"
           >
             <IoIosLogIn className="mr-2" />
             <span>Licencias</span>
@@ -19,7 +19,7 @@ const mainPage = () => {
         <div className="flex justify-center items-center w-full h-15 hover:bg-complementary p-6 cursor-pointer">
           <Link
             className="flex flex-1 items-center mr-2"
-            href="/dashboard/main"
+            href="/dashboard/license"
           >
             <AiOutlineLogin className="mr-2" />
             <span>Colaboradores</span>

@@ -5,9 +5,11 @@ import { Roboto } from "next/font/google";
 // Importa con los pesos y subsets que necesites
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "700"], // puedes agregar más
-  variable: "--font-roboto", // opcional, para usar como variable CSS
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
+  display: "swap",
 });
+
 
 export const metadata = {
   title: "Mi App",
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={roboto.variable}>
+    <html lang="es" className={roboto.className}>
       <body>{children}</body>
     </html>
   );

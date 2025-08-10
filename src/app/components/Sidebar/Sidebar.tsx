@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div
       id="menu"
-      className="bg-main-white min-h-screen z-10 text-slate-300 w-70 left-0 overflow-hideen border-amber-400"
+      className="bg-main-white min-h-screen z-10 text-slate-300 w-70 left-0 overflow-hideen border-amber-400 "
     >
       <div id="logo" className="my-4 px-6">
         <section className="text-lg md:text-2xl font-bold text-white">

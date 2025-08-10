@@ -55,7 +55,7 @@ const MenuItems: React.FC = () => {
       >
         <Link
           href={path}
-          className={`w-full rounded px-2 inline-flex space-x-2 items-center hover:bg-complementary transition ease-linear duration-150 text-main-stone-900 ${
+          className={`w-full rounded px-2 inline-flex space-x-2 items-center hover:bg-complementary transition ease-linear duration-150 text-main-stone-800 ${
             isActive ? "bg-complementary text-primary" : ""
           }`}
         >
