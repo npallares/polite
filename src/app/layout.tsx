@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import { Roboto } from "next/font/google";
+import Providers from "./store/Providers";
 
 // Importa con los pesos y subsets que necesites
 const roboto = Roboto({
@@ -9,7 +10,6 @@ const roboto = Roboto({
   variable: "--font-roboto",
   display: "swap",
 });
-
 
 export const metadata = {
   title: "Mi App",
@@ -23,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={roboto.className}>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
