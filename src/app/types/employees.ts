@@ -44,16 +44,6 @@ export interface Address {
   apartment?: string; // *
 }
 
-export interface Person {
-  fullName: string; // *
-  birthDate: ISODate; // *
-  personalEmail: Email; // *
-  mobilePhone: Phone; // *
-  gender: Gender; // *
-  address: Address;
-  dni: string;
-}
-
 // --- 2) Tax and Banking Information ---
 export interface TaxAndBankingInformation {
   employmentType: EmploymentType; // *
@@ -63,14 +53,7 @@ export interface TaxAndBankingInformation {
 }
 
 // --- 3) Job Information ---
-export interface JobInformation {
-  workEmail: Email; // *
-  startDate: ISODate; // *
-  branch: string; // *
-  department: string; // *
-  role: string; // *
-  reportsTo: string; // * (id or name of supervisor)
-}
+
 
 // --- 4) Emergency Contact ---
 export interface EmergencyContact {
@@ -79,10 +62,25 @@ export interface EmergencyContact {
   mobilePhone: Phone; // *
 }
 
-export interface Employee {
-  id: UUID;
-  personal: Person;
-  taxAndBanking: TaxAndBankingInformation;
-  job: JobInformation;
-  emergencyContact: EmergencyContact;
+export interface JobInformation {
+  licenses: string | null;
 }
+
+export interface Person {
+  fullName: string; // *
+  birthDate: string; // *
+  personalEmail: string; // *
+  mobilePhone: number; // *
+  gender: string; // *
+  address: string;
+  dni: number;
+}
+
+export interface Employee {
+  id: string;
+  personal: Person;
+  job?: JobInformation;
+}
+
+/* taxAndBanking?: TaxAndBankingInformation;
+emergencyContact?: EmergencyContact; */

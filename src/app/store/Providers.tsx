@@ -3,7 +3,8 @@
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { store } from ".";
-import { setEployees } from "./employees/employeesSlice";
+import { setEmployees } from "./employees/employeesSlice";
+import MOK from "../MOK/MOK_EMPLOYESS.json"
 
 interface Props {
   children: React.ReactNode;
@@ -11,11 +12,14 @@ interface Props {
 
 const Providers = ({ children }: Props) => {
   useEffect(() => {
-    const persisted = JSON.parse(localStorage.getItem("employees") ?? "{}");
+    
+    // const persisted = localStorage.getItem("employees") ?? "{}";
 
-    const employees = persisted.employees ?? {};
+    console.log("Nico persisted", MOK);
 
-    store.dispatch(setEployees(employees));
+    //const employees = persisted.employees ?? {};
+
+    store.dispatch(setEmployees(MOK));
   }, []);
 
   return <Provider store={store}>{children}</Provider>;

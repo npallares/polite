@@ -1,0 +1,17 @@
+[
+  {
+    "id": "UNO-1",
+    "personal": {
+      "fullName": "nicolas",
+      "birthDate": "24-05-1998",
+      "personalEmail": "ejemplonicolas@polite.com.ar",
+      "mobilePhone": 12346789,
+      "gender": "male",
+      "address": "direccion123",
+      "dni": 123456
+    },
+    "job": {
+      "licenses": null
+    }
+  }
+]
