@@ -1,14 +1,10 @@
-import FormLicense from "@/app/components/FormLicense/FormLicense";
-import getEmployeeById from "@/app/utils/getEmployeeById";
+"use client";
+import FormLicense from "@/components/FormLicense/FormLicense";
+import GetEmployeeById from "@/utils/GetEmployeeById";
 import React from "react";
 
-interface Props {
-  params: Promise<{ id: string }>;
-}
-
-const page = async ({ params }: Props) => {
-  const { id } = await params;
-  const employee = getEmployeeById(id);
+const page = () => {
+  const employee = GetEmployeeById();
   console.log("Employee :", employee);
   return <FormLicense />;
 };

@@ -1,6 +1,7 @@
-import { Employee } from "@/app/types/employees";
+import { Employee } from "@/types/employees";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import EMPLOYEE_MOK from "../../MOK/MOK_EMPLOYESS.json";
+import {RootState} from "../index"
 
 interface IEmployees {
   employees: Employee[];
@@ -21,5 +22,7 @@ const employeesSlice = createSlice({
 });
 
 export const { setEmployees } = employeesSlice.actions;
+export const selectEmployees = (state: RootState): IEmployees =>
+  state.employees;
 
 export default employeesSlice.reducer;

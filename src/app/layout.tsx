@@ -1,13 +1,12 @@
 // app/layout.tsx
 import "./globals.css";
-import { Roboto } from "next/font/google";
-import Providers from "./store/Providers";
+import { Poppins } from "next/font/google";
+import Providers from "../store/Providers";
 
-// Importa con los pesos y subsets que necesites
-const roboto = Roboto({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-roboto",
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -22,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={roboto.className}>
+    <html lang="es" className={poppins.className}>
       <body>
         <Providers>{children}</Providers>
       </body>
