@@ -15,7 +15,7 @@ const Providers = ({ children }: Props) => {
     
     // const persisted = localStorage.getItem("employees") ?? "{}";
 
-    console.log("Nico persisted", MOK);
+    // console.log("Nico persisted", MOK);
 
     //const employees = persisted.employees ?? {};
 

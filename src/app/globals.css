@@ -2,31 +2,25 @@
 
 @theme {
   /* custom colors */
-  --color-primary: #5A67BA;
-  --color-complementary: #DEE1F1;
-  --color-main-white: #FBFBFB;
+  --color-primary: #5a67ba;
+  --color-complementary: #dee1f1;
+  --color-main-white: #fbfbfb;
 
-  --color-main-stone-900:#5C5C5C;
-  ;
-  --color-main-stone-800:#AEAEAE;
+  --color-main-stone-900: #5c5c5c;
+  --color-main-stone-800: #7D7D7D;
+  --color-main-stone-700: #aeaeae;
 
-  --color-brand-900: #21dbaa;
-  --color-brand-800: #28fcc5;
-  --color-brand-700: #1cba90;
-  --color-brand-600: #19a480;
-  --color-brand-400: #0f6f56;
-
-  --color-complementary-900: #291f5c;
-  --color-complementary-800: #3d29aa;
-  --color-complementary-700: #5237e3;
-  --color-complementary-600: #7964e9;
-  --color-complementary-500: #a799f1;
+  --color-brand-900: #444c9e;
+  --color-brand-800: #5a67ba;
+  --color-brand-700: #7B85C8;
+  --color-brand-600: #9CA4D6;
+  --color-brand-500: #BDC2E3;
+  --color-brand-400: #DEE1F1;
 
   --color-success-main: #00a35e;
   --color-warning-main: #df7b02;
   --color-info-main: #308af4;
   --color-error-main: #de1929;
-  
 
   /* custom brackpoints */
   --breakpoint-1920: 1920px;

@@ -3,9 +3,9 @@
 import { selectEmployees } from "@/store/employees/employeesSlice";
 import { useAppSelector } from "../hooks/store";
 
-const GetEmployeeById = () => {
+const GetEmployeeById = (id: string) => {
   const employees = useAppSelector(selectEmployees);
-  console.log("nico employees", employees);
+  console.log("nico employees", employees, id);
   return employees;
 };
 
