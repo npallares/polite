@@ -1,14 +1,24 @@
-import { Employee } from "@/types/employees";
+import { Employee, Licenses } from "@/types/employees";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import EMPLOYEE_MOK from "../../MOK/MOK_EMPLOYESS.json";
-import {RootState} from "../index"
+import { RootState } from "../index";
 
-interface IEmployees {
+export enum LoadingStatus {
+  Uninitialized = "Uninitialized",
+  Loading = "Loading",
+  Errored = "Errored",
+  Loaded = "Loaded",
+}
+interface EmployesState {
+  status: LoadingStatus;
   employees: Employee[];
+  error: string | null;
 }
 
-const initialState: IEmployees = {
+const initialState: EmployesState = {
+  status: LoadingStatus.Uninitialized,
   employees: EMPLOYEE_MOK,
+  error: null,
 };
 
 const employeesSlice = createSlice({
@@ -18,11 +28,23 @@ const employeesSlice = createSlice({
     setEmployees: (state, action: PayloadAction<Employee[]>) => {
       state.employees = action.payload;
     },
+    setJobsLicenseToEmployee: (
+      state,
+      action: PayloadAction<{ employeeId: string; currentLicense: Licenses[] }>
+    ) => {
+      const { employeeId, currentLicense } = action.payload;
+
+      const employee = state.employees.find((emp) => emp.id === employeeId);
+      if (employee) {
+        const prev = employee.job.licenses ?? [];
+        employee.job.licenses = [...prev, ...currentLicense];
+      }
+    },
   },
 });
 
-export const { setEmployees } = employeesSlice.actions;
-export const selectEmployees = (state: RootState): IEmployees =>
-  state.employees;
+export const { setEmployees, setJobsLicenseToEmployee } =
+  employeesSlice.actions;
+export const selectEmployees = (state: RootState) => state.employees;
 
 export default employeesSlice.reducer;

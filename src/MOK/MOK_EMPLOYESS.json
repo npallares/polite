@@ -11,7 +11,22 @@
       "dni": 123456
     },
     "job": {
-      "licenses": null
+      "licenses": []
+    }
+  },
+  {
+    "id": "DOS-2",
+    "personal": {
+      "fullName": "juan",
+      "birthDate": "24-05-1998",
+      "personalEmail": "ejemplojuan@polite.com.ar",
+      "mobilePhone": 12346789,
+      "gender": "male",
+      "address": "direccion123",
+      "dni": 123456
+    },
+    "job": {
+      "licenses": []
     }
   }
 ]

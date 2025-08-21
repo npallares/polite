@@ -54,7 +54,6 @@ export interface TaxAndBankingInformation {
 
 // --- 3) Job Information ---
 
-
 // --- 4) Emergency Contact ---
 export interface EmergencyContact {
   fullName: string; // *
@@ -62,8 +61,14 @@ export interface EmergencyContact {
   mobilePhone: Phone; // *
 }
 
+export interface Licenses{
+  to: string;
+  from: string;
+  type: string;
+}
+
 export interface JobInformation {
-  licenses: string | null;
+  licenses: Licenses[];
 }
 
 export interface Person {
@@ -79,8 +84,5 @@ export interface Person {
 export interface Employee {
   id: string;
   personal: Person;
-  job?: JobInformation;
+  job: JobInformation;
 }
-
-/* taxAndBanking?: TaxAndBankingInformation;
-emergencyContact?: EmergencyContact; */
