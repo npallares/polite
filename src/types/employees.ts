@@ -33,35 +33,30 @@ export type Phone = string & { __brand: "Phone" }; // e.g. "+54 11 1234-5678"
 export type SSN = string & { __brand: "SSN" }; // 11 digits (validation outside TS)
 export type BankAccount = string & { __brand: "BankAccount" }; // 22 digits
 
-// --- 1) Personal Information ---
 export interface Address {
-  country?: string; // select
-  state: string; // *
-  city?: string; // select
+  country?: string;
+  state: string;
+  city?: string;
   postalCode?: string;
-  streetAddress: string; // *
-  floor?: string; // *
-  apartment?: string; // *
+  streetAddress: string;
+  floor?: string;
+  apartment?: string;
 }
 
-// --- 2) Tax and Banking Information ---
 export interface TaxAndBankingInformation {
-  employmentType: EmploymentType; // *
-  ssn: SSN; // *
-  bankName: string; // *
-  bankAccount: BankAccount; // *
+  employmentType: EmploymentType;
+  ssn: SSN;
+  bankName: string;
+  bankAccount: BankAccount;
 }
 
-// --- 3) Job Information ---
-
-// --- 4) Emergency Contact ---
 export interface EmergencyContact {
-  fullName: string; // *
-  relationship: Relationship; // *
-  mobilePhone: Phone; // *
+  fullName: string;
+  relationship: Relationship;
+  mobilePhone: Phone;
 }
 
-export interface Licenses{
+export interface Licenses {
   to: string;
   from: string;
   type: string;
@@ -72,11 +67,11 @@ export interface JobInformation {
 }
 
 export interface Person {
-  fullName: string; // *
-  birthDate: string; // *
-  personalEmail: string; // *
-  mobilePhone: number; // *
-  gender: string; // *
+  fullName: string;
+  birthDate: string; 
+  personalEmail: string;
+  mobilePhone: number;
+  gender: string;
   address: string;
   dni: number;
 }
