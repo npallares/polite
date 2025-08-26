@@ -13,7 +13,7 @@ Polite es una aplicación web desarrollada con [Next.js](https://nextjs.org), di
 
 1. Clona el repositorio:
    ```bash
-   git clone <URL-del-repo>
+   git clone <https://github.com/juansaintgenez-eng/politehr.git>
    cd polite
    ```
 2. Instala las dependencias:
