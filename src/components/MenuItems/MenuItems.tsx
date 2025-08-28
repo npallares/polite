@@ -2,9 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX } from "react";
-import { CgProfile } from "react-icons/cg";
-import { IoCalendarOutline, IoDocumentOutline } from "react-icons/io5";
-import { LuLayoutDashboard } from "react-icons/lu";
 
 interface IMenuItem {
   path: string;
@@ -13,34 +10,11 @@ interface IMenuItem {
   id: string;
 }
 
-const menuItems: IMenuItem[] = [
-  {
-    path: "/dashboard/main",
-    icon: <LuLayoutDashboard className="w-4 h-4" />,
-    title: "Home",
-    id:"main"
-  },
-  {
-    path: "/dashboard/license/UNO-1",
-    icon: <IoCalendarOutline className="w-4 h-4" />,
-    title: "Licencias",
-    id: "license",
-  },
-  {
-    path: "/dashboard/receipts",
-    icon: <IoDocumentOutline className="w-4 h-4" />,
-    title: "Recibos",
-    id:"receipts"
-  },
-  {
-    path: "/dashboard/profile",
-    icon: <CgProfile className="w-4 h-4" />,
-    title: "Mis Datos",
-    id:"profile"
-  },
-];
+interface Props {
+  menuItems: IMenuItem[];
+}
 
-const MenuItems: React.FC = () => {
+const MenuItems = ({ menuItems }: Props) => {
   const pathName = usePathname();
   return menuItems.map((item) => {
     const { path, icon, title, id } = item;
