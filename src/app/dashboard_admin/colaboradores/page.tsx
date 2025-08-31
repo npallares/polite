@@ -1,10 +1,10 @@
-import FormColaboradores from '@/components/FormColaboradores/FormColaboradores';
+import FormNewEntry from '@/forms/FormNewEntry/FormNewEntry';
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <FormColaboradores />
+      <FormNewEntry/>
     </div>
   );
 }

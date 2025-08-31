@@ -1,11 +1,11 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { PrimaryButton, SecondaryButton } from "../Buttons";
+import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
 //import createNewEmployee from "@/utils/createNewEmployee";
 import useColaboradores from "@/hooks/useColaboradores/useColaboradores";
 
-const FormColaboradores = () => {
+const FormNewEntry = () => {
   const { personalDataHandleSubmit, addressDataHandleSubmite } =
     useColaboradores();
   const {
@@ -383,4 +383,4 @@ const FormColaboradores = () => {
   );
 };
 
-export default FormColaboradores;
+export default FormNewEntry;
