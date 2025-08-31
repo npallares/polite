@@ -28,6 +28,10 @@ const employeesSlice = createSlice({
     setEmployees: (state, action: PayloadAction<Employee[]>) => {
       state.employees = action.payload;
     },
+    setNewEmployee: (state, action: PayloadAction<Employee>) => {
+      state.employees = [...state.employees, action.payload];
+      console.log("nico payload", action.payload);
+    },
     setJobsLicenseToEmployee: (
       state,
       action: PayloadAction<{ employeeId: string; currentLicense: Licenses[] }>
@@ -43,7 +47,7 @@ const employeesSlice = createSlice({
   },
 });
 
-export const { setEmployees, setJobsLicenseToEmployee } =
+export const { setEmployees, setJobsLicenseToEmployee, setNewEmployee } =
   employeesSlice.actions;
 export const selectEmployees = (state: RootState) => state.employees;
 

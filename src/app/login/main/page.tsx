@@ -19,7 +19,7 @@ const mainPage = () => {
         <div className="flex justify-center items-center w-full h-15 hover:bg-complementary p-6 cursor-pointer">
           <Link
             className="flex flex-1 items-center mr-2"
-            href="/dashboard_admin"
+            href="/dashboard_admin/colaboradores"
           >
             <AiOutlineLogin className="mr-2" />
             <span>Colaboradores</span>

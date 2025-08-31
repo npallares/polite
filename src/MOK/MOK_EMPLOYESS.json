@@ -2,7 +2,8 @@
   {
     "id": "UNO-1",
     "personal": {
-      "fullName": "nicolas",
+      "firstName": "nicolas",
+      "lastName": "pallares",
       "birthDate": "24-05-1998",
       "personalEmail": "ejemplonicolas@polite.com.ar",
       "mobilePhone": 12346789,
@@ -17,7 +18,8 @@
   {
     "id": "DOS-2",
     "personal": {
-      "fullName": "juan",
+      "firstName": "juan",
+      "lastName": "perez",
       "birthDate": "24-05-1998",
       "personalEmail": "ejemplojuan@polite.com.ar",
       "mobilePhone": 12346789,

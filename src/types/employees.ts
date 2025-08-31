@@ -51,7 +51,8 @@ export interface TaxAndBankingInformation {
 }
 
 export interface EmergencyContact {
-  fullName: string;
+  firstName: string;
+  lastName: string;
   relationship: Relationship;
   mobilePhone: Phone;
 }
@@ -66,18 +67,39 @@ export interface JobInformation {
   licenses: Licenses[];
 }
 
-export interface Person {
-  fullName: string;
-  birthDate: string; 
+export interface AddressData {
+  country?: string;
+  province?: string;
+  city?: string;
+  postalCode?: string;
+  address?: string;
+  apartment?: string;
+  floor?: string;
+}
+
+export interface Person extends PersonalData, AddressData {
+  // Podés agregar campos adicionales si querés
+}
+
+export interface PersonalData {
+  firstName: string;
+  lastName: string;
+  birthDate: string;
   personalEmail: string;
-  mobilePhone: number;
-  gender: string;
-  address: string;
-  dni: number;
+  mobilePhone?: number;
+  gender?: string;
+}
+
+export interface Banck {
+  contractType: string;
+  cuil: string;
+  banck: string;
+  cbu: string;
 }
 
 export interface Employee {
   id: string;
   personal: Person;
   job: JobInformation;
+  banck?: Banck | undefined;
 }
