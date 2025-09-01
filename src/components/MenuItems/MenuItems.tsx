@@ -18,7 +18,6 @@ const MenuItems = ({ menuItems }: Props) => {
   const pathName = usePathname();
   return menuItems.map((item) => {
     const { path, icon, title, id } = item;
-    console.log("items", item, pathName);
     const isActive = pathName.includes(id);
     return (
       <div

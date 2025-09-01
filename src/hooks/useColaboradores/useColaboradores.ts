@@ -53,7 +53,7 @@ interface UseColaboradores {
   addressData: AddressData | null;
   bankData: BankInformation | null;
   workData: JobInformation | null;
-  contactData: EmergencyContact|null;
+  contactData: EmergencyContact | null;
 }
 
 const useColaboradores = (): UseColaboradores => {
@@ -64,20 +64,10 @@ const useColaboradores = (): UseColaboradores => {
   const [workData, setWorkData] = useState<JobInformation | null>(null);
   const [contactData, setContactData] = useState<EmergencyContact | null>(null);
 
-  console.log(
-    "nico use colaboradores",
-    personalData,
-    addressData,
-    bankData,
-    workData,
-    contactData
-  );
-
   useEffect(() => {
     const comprobation =
       personalData && addressData && bankData && workData && contactData;
     if (comprobation) {
-      console.log("Nico hola");
       const newEmployee = createNewEmployee({
         personalData,
         addressData,
@@ -87,7 +77,6 @@ const useColaboradores = (): UseColaboradores => {
       });
       dispatch(setNewEmployee(newEmployee));
     }
-    console.log("comprobation", comprobation);
   }, [personalData, addressData, bankData, workData, dispatch, contactData]);
 
   const personalDataHandleSubmit = (
@@ -146,7 +135,6 @@ const useColaboradores = (): UseColaboradores => {
     rol: string,
     reportsTo?: string
   ) => {
-    console.log("Nico adentro");
     setWorkData({
       workEmail,
       workBranch,

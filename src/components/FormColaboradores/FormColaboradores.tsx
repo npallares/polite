@@ -32,7 +32,6 @@ const FormColaboradores = () => {
       apartment,
       floor,
     } = data;
-    console.log("Formulario prev", data);
 
     if (
       !firstName ||
@@ -49,20 +48,6 @@ const FormColaboradores = () => {
       !floor
     )
       return;
-
-    console.log(
-      "Formulario enviado",
-      firstName,
-      lastName,
-      birthDate,
-      personalEmail,
-      province,
-      city,
-      postalCode,
-      address,
-      apartment,
-      floor
-    );
 
     personalDataHandleSubmit(
       firstName,
@@ -81,8 +66,7 @@ const FormColaboradores = () => {
       apartment,
       floor
     );
-    //reset();
-    return console.log("Form colaboradores", "reset");
+    return reset();
   });
 
   return (

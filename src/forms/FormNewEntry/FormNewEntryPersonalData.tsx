@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
 import { redirect } from "next/navigation";
 
-
 interface Props {
   personalDataHandleSubmit: (
     firstName: string,
@@ -52,7 +51,6 @@ const FormNewEntryPersonalData = ({
       apartment,
       floor,
     } = data;
-    console.log("Formulario prev", data);
 
     if (
       !firstName ||
@@ -69,20 +67,6 @@ const FormNewEntryPersonalData = ({
       !floor
     )
       return;
-
-    console.log(
-      "Formulario enviado",
-      firstName,
-      lastName,
-      birthDate,
-      personalEmail,
-      province,
-      city,
-      postalCode,
-      address,
-      apartment,
-      floor
-    );
 
     personalDataHandleSubmit(
       firstName,
@@ -102,7 +86,6 @@ const FormNewEntryPersonalData = ({
       floor
     );
     reset();
-    console.log("Form colaboradores", "reset");
     return redirect("/dashboard_admin/colaboradores/new_entry?step=2");
   });
 

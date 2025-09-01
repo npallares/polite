@@ -29,11 +29,9 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
     const dataComprobation = Boolean(
       workEmail && startDate && workBranch && rol && area && reportsTo
     );
-    console.log("Formulario prev", data, dataComprobation);
 
     if (!dataComprobation) return;
 
-    console.log("Formulario enviado", data);
     workDataHandlerSubmite(
       workEmail,
       startDate,
@@ -44,7 +42,6 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
     );
 
     reset();
-    console.log("Form colaboradores", "reset");
     return redirect("/dashboard_admin/colaboradores/new_entry?step=4");
   });
 

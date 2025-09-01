@@ -28,16 +28,13 @@ const FormNewEntryContactData = ({ contactDataHandleSubmite }: Props) => {
     const dataComprobation = Boolean(
       firstName && lastName && relationship && mobilePhone
     );
-    console.log("Formulario prev", data, dataComprobation);
 
     if (!dataComprobation) return;
 
-    console.log("Formulario enviado", data);
     contactDataHandleSubmite(firstName, lastName, relationship, mobilePhone);
     
 
     reset();
-    console.log("Form colaboradores", "reset");
     return redirect("/dashboard_admin/colaboradores/");
   });
 

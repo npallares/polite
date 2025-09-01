@@ -11,9 +11,7 @@ export enum LoadingStatus {
   Loaded = "Loaded",
 }
 interface EmployesState {
-  status: LoadingStatus;
   employees: Employee[];
-  error: string | null;
 }
 
 const LOCAL_STORAGE_KEY = "employees";
@@ -21,9 +19,7 @@ const LOCAL_STORAGE_KEY = "employees";
 const initialState: EmployesState = loadState<EmployesState>(
   LOCAL_STORAGE_KEY,
   {
-    status: LoadingStatus.Uninitialized,
     employees: EMPLOYEE_MOK,
-    error: null,
   }
 );
 

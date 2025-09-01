@@ -21,11 +21,11 @@ interface Props {
 const useLicense = ({ id }: Props): UseLicense => {
   const dispatch = useAppDispatch();
   const employees = useAppSelector(selectEmployees);
-  const currentEmployee = employees.employees.filter((el) => el.id === id);
+  const currentEmployee = employees.employees.find((e) => e.id === id) ?? null;
   const [licenseData, setLicenseData] = useState<Licenses | null>(null);
 
   useEffect(() => {
-    const comprobation = licenseData && id && currentEmployee;
+    const comprobation = licenseData && currentEmployee;
     if (comprobation) {
       const newLicenseByData = getLicenseByData({
         licenseFrom: licenseData.from,
@@ -41,7 +41,8 @@ const useLicense = ({ id }: Props): UseLicense => {
         );
       }
     }
-  }, [id, dispatch, licenseData, currentEmployee]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, licenseData, dispatch]);
 
   const licenseDataHandleSubmit = (to: string, from: string, type: string) => {
     setLicenseData({

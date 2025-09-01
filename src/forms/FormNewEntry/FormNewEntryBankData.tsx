@@ -26,14 +26,11 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
     const { contractType, cuil, bank, cbu } = data;
 
     const dataComprobation = Boolean(contractType && cuil && bank & cbu);
-    console.log("Formulario prev", data, dataComprobation);
 
     if (dataComprobation) return;
-    console.log("Formulario enviado", data);
     bankDataHandleSubmite(contractType, cuil, bank, cbu);
 
     reset();
-    console.log("Form colaboradores", "reset");
     return redirect("/dashboard_admin/colaboradores/new_entry?step=3");
   });
 

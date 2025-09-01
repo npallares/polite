@@ -7,8 +7,7 @@ export const store = configureStore({
   reducer: {
     employees: employeesSlice,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(localStorageMiddleware as Middleware),
+  
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

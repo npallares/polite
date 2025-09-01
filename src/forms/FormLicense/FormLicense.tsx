@@ -21,12 +21,11 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
   });
 
   const onSubmit = handleSubmit((data) => {
-    //console.log("Formulario enviado", data);
     const { licenseFrom, licenseType, licenseTo } = data;
     const dataComprobation = Boolean(licenseFrom && licenseType && licenseTo);
     if (!dataComprobation) return;
     licenseDataHandleSubmit(licenseTo, licenseFrom, licenseType);
-    reset();
+    return reset();
   });
 
   return (
