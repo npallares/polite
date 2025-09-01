@@ -12,23 +12,25 @@
       "dni": 123456
     },
     "job": {
-      "licenses": []
-    }
-  },
-  {
-    "id": "DOS-2",
-    "personal": {
-      "firstName": "juan",
-      "lastName": "perez",
-      "birthDate": "24-05-1998",
-      "personalEmail": "ejemplojuan@polite.com.ar",
-      "mobilePhone": 12346789,
-      "gender": "male",
-      "address": "direccion123",
-      "dni": 123456
+      "workEmail": "",
+      "startDate": "",
+      "workBranch": "",
+      "area": "",
+      "rol": "",
+      "licenses": [],
+      "reportsTo": ""
     },
-    "job": {
-      "licenses": []
+    "bank": {
+      "contractType": "one",
+      "cuil": "51351",
+      "bank": "51351",
+      "cbu": "51351"
+    },
+    "emergencyContact": {
+      "firstName": "",
+      "lastName": "",
+      "relationship": "",
+      "mobilePhone": 0
     }
   }
 ]

@@ -1,4 +1,4 @@
-import FormLicense from "@/components/FormLicense/FormLicense";
+import FormLicenseWrapper from "@/forms/FormLicense/FormLicenseWrapper";
 import React from "react";
 
 interface Props {
@@ -7,8 +7,7 @@ interface Props {
 
 const page = async ({ params }: Props) => {
   const { id } = await params;
-  console.log("Employee :", id);
-  return <FormLicense id={id} />;
+  return <FormLicenseWrapper id={id} />;
 };
 
 export default page;

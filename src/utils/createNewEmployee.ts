@@ -1,33 +1,76 @@
-import { Employee } from "@/types/employees";
+import {
+  AddressData,
+  BankInformation,
+  EmergencyContact,
+  Employee,
+  JobInformation,
+  PersonalData,
+} from "@/types/employees";
 interface Props {
-  firstName: string;
-  lastName: string;
-  birthDate: string;
-  personalEmail: string;
-  gender: string;
-  mobilePhone: number;
+  personalData: PersonalData;
+  addressData: AddressData;
+  bankData: BankInformation;
+  workData: JobInformation;
+  contactData: EmergencyContact;
 }
 
 const createNewEmployee = ({
-  firstName,
-  lastName,
-  birthDate,
-  personalEmail,
-  gender,
-  mobilePhone,
+  personalData,
+  addressData,
+  bankData,
+  workData,
+  contactData,
 }: Props): Employee => {
+  const { firstName, lastName, birthDate, personalEmail, gender, mobilePhone } =
+    personalData;
+  const { country, province, city, postalCode, address, apartment, floor } =
+    addressData;
+  const { contractType, cuil, bank, cbu } = bankData;
+  const { workEmail, startDate, workBranch, area, reportsTo, rol } = workData;
+  const {
+    firstName: contactFirstName,
+    lastName: contactLastName,
+    relationship,
+    mobilePhone: contactMobilePhone,
+  } = contactData;
+
   const newEmploye: Employee = {
     id: `${firstName}${lastName}`,
     personal: {
-      firstName: firstName,
-      lastName: lastName,
-      birthDate: birthDate,
-      personalEmail: personalEmail,
-      gender: gender,
-      mobilePhone: mobilePhone,
+      firstName,
+      lastName,
+      birthDate,
+      personalEmail,
+      gender,
+      mobilePhone,
+      country,
+      province,
+      city,
+      postalCode,
+      address,
+      apartment,
+      floor,
     },
     job: {
+      workBranch,
+      workEmail,
+      startDate,
+      area,
+      rol,
+      reportsTo,
       licenses: [],
+    },
+    bank: {
+      contractType,
+      cuil,
+      bank,
+      cbu,
+    },
+    emergencyContact:{
+      firstName: contactFirstName,
+      lastName: contactLastName,
+      relationship: relationship,
+      mobilePhone: contactMobilePhone
     },
   };
   return newEmploye;

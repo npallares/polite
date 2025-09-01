@@ -2,9 +2,14 @@
 
 import { setNewEmployee } from "@/store/employees/employeesSlice";
 import { useAppDispatch } from "@/store/store";
-import { AddressData, Employee, PersonalData } from "@/types/employees";
-// import createNewEmployee from "@/utils/createNewEmployee";
-import createNewEmployee2 from "@/utils/createNewEmployee2";
+import {
+  AddressData,
+  BankInformation,
+  EmergencyContact,
+  JobInformation,
+  PersonalData,
+} from "@/types/employees";
+import createNewEmployee from "@/utils/createNewEmployee";
 import { useEffect, useState } from "react";
 
 interface UseColaboradores {
@@ -24,26 +29,66 @@ interface UseColaboradores {
     mobilePhone: number,
     gender: string
   ) => void;
+  bankDataHandleSubmite: (
+    contractType: string,
+    cuil: string,
+    bank: string,
+    cbu: string
+  ) => void;
+  workDataHandlerSubmite: (
+    workEmail: string,
+    startDate: string,
+    workBranch: string,
+    area: string,
+    rol: string,
+    reportsTo?: string
+  ) => void;
+  contactDataHandleSubmite: (
+    firstName: string,
+    lastName: string,
+    relationship: string,
+    mobilePhone: number
+  ) => void;
   personalData: PersonalData | null;
   addressData: AddressData | null;
+  bankData: BankInformation | null;
+  workData: JobInformation | null;
+  contactData: EmergencyContact|null;
 }
 
 const useColaboradores = (): UseColaboradores => {
   const dispatch = useAppDispatch();
   const [personalData, setPersonalData] = useState<PersonalData | null>(null);
   const [addressData, setAddressData] = useState<AddressData | null>(null);
+  const [bankData, setBankData] = useState<BankInformation | null>(null);
+  const [workData, setWorkData] = useState<JobInformation | null>(null);
+  const [contactData, setContactData] = useState<EmergencyContact | null>(null);
+
+  console.log(
+    "nico use colaboradores",
+    personalData,
+    addressData,
+    bankData,
+    workData,
+    contactData
+  );
 
   useEffect(() => {
-    if (personalData && addressData) {
-      const newEmployee = createNewEmployee2({ personalData, addressData });
+    const comprobation =
+      personalData && addressData && bankData && workData && contactData;
+    if (comprobation) {
+      console.log("Nico hola");
+      const newEmployee = createNewEmployee({
+        personalData,
+        addressData,
+        bankData,
+        workData,
+        contactData,
+      });
       dispatch(setNewEmployee(newEmployee));
     }
-  }, [personalData, addressData, dispatch]);
-
-  /* const createNewEmployeeInStore = (newEmployee: Employee) => {
-    console.log("nico newEmployee hook", newEmployee);
-    dispatch(setNewEmployee(newEmployee));
-  }; */
+    console.log("comprobation", comprobation);
+  }, [personalData, addressData, bankData, workData, dispatch, contactData]);
 
   const personalDataHandleSubmit = (
     firstName: string,
@@ -80,7 +125,57 @@ const useColaboradores = (): UseColaboradores => {
       floor,
     });
   };
+  const bankDataHandleSubmite = (
+    contractType: string,
+    cuil: string,
+    bank: string,
+    cbu: string
+  ) => {
+    setBankData({
+      contractType,
+      cuil,
+      bank,
+      cbu,
+    });
+  };
+  const workDataHandlerSubmite = (
+    workEmail: string,
+    startDate: string,
+    workBranch: string,
+    area: string,
+    rol: string,
+    reportsTo?: string
+  ) => {
+    console.log("Nico adentro");
+    setWorkData({
+      workEmail,
+      workBranch,
+      startDate,
+      area,
+      rol,
+      reportsTo,
+    });
+  };
+  const contactDataHandleSubmite = (
+    firstName: string,
+    lastName: string,
+    relationship: string,
+    mobilePhone: number
+  ) => {
+    setContactData({
+      firstName,
+      lastName,
+      relationship,
+      mobilePhone,
+    });
+  };
   return {
+    contactDataHandleSubmite,
+    contactData,
+    workDataHandlerSubmite,
+    workData,
+    bankDataHandleSubmite,
+    bankData,
     personalDataHandleSubmit,
     personalData,
     addressData,

@@ -2,20 +2,15 @@
 
 import Image from "next/image";
 import React from "react";
-import Icons from "../Icons";
-import { PrimaryButton, SecondaryButton } from "../Buttons";
 import { useForm } from "react-hook-form";
-import GetEmployeeById from "@/utils/GetEmployeeById";
-import { useAppDispatch } from "@/hooks/store";
-import { setJobsLicenseToEmployee } from "@/store/employees/employeesSlice";
-import getLicenseByData from "@/utils/getLicenseByData";
+import Icons from "@/components/Icons";
+import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 
 interface Props {
-  id: string;
+  licenseDataHandleSubmit: (to: string, from: string, type: string) => void;
 }
 
-const FormLicense = ({ id }: Props) => {
-  const dispatch = useAppDispatch();
+const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
   const {
     register,
     handleSubmit,
@@ -25,30 +20,12 @@ const FormLicense = ({ id }: Props) => {
     mode: "onChange", // importante para que isValid se actualice al tipear
   });
 
-  if (!id) return;
-
-  const currentEmployee = GetEmployeeById(id);
-
-  if (!currentEmployee) {
-    return <div>id de Empleado no existe</div>;
-  }
-
   const onSubmit = handleSubmit((data) => {
     //console.log("Formulario enviado", data);
     const { licenseFrom, licenseType, licenseTo } = data;
-    const newLicenseByData = getLicenseByData({
-      licenseFrom,
-      licenseType,
-      licenseTo,
-    });
-    console.log("Formulario enviado", newLicenseByData);
-    if (newLicenseByData)
-      dispatch(
-        setJobsLicenseToEmployee({
-          employeeId: id,
-          currentLicense: newLicenseByData,
-        })
-      );
+    const dataComprobation = Boolean(licenseFrom && licenseType && licenseTo);
+    if (!dataComprobation) return;
+    licenseDataHandleSubmit(licenseTo, licenseFrom, licenseType);
     reset();
   });
 

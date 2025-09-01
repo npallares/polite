@@ -1,5 +1,3 @@
-type UUID = string;
-
 export enum Gender {
   Male = "male",
   Female = "female",
@@ -53,8 +51,8 @@ export interface TaxAndBankingInformation {
 export interface EmergencyContact {
   firstName: string;
   lastName: string;
-  relationship: Relationship;
-  mobilePhone: Phone;
+  relationship: string;
+  mobilePhone: number;
 }
 
 export interface Licenses {
@@ -64,7 +62,13 @@ export interface Licenses {
 }
 
 export interface JobInformation {
-  licenses: Licenses[];
+  workEmail: string;
+  startDate: string;
+  workBranch: string;
+  area: string;
+  rol: string;
+  licenses?: Licenses[];
+  reportsTo?: string;
 }
 
 export interface AddressData {
@@ -90,10 +94,10 @@ export interface PersonalData {
   gender?: string;
 }
 
-export interface Banck {
+export interface BankInformation {
   contractType: string;
   cuil: string;
-  banck: string;
+  bank: string;
   cbu: string;
 }
 
@@ -101,5 +105,6 @@ export interface Employee {
   id: string;
   personal: Person;
   job: JobInformation;
-  banck?: Banck | undefined;
+  bank: BankInformation | undefined;
+  emergencyContact: EmergencyContact | undefined;
 }

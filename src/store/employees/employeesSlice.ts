@@ -2,6 +2,7 @@ import { Employee, Licenses } from "@/types/employees";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import EMPLOYEE_MOK from "../../MOK/MOK_EMPLOYESS.json";
 import { RootState } from "../index";
+import { loadState, saveState } from "@/utils/storage";
 
 export enum LoadingStatus {
   Uninitialized = "Uninitialized",
@@ -15,11 +16,16 @@ interface EmployesState {
   error: string | null;
 }
 
-const initialState: EmployesState = {
-  status: LoadingStatus.Uninitialized,
-  employees: EMPLOYEE_MOK,
-  error: null,
-};
+const LOCAL_STORAGE_KEY = "employees";
+
+const initialState: EmployesState = loadState<EmployesState>(
+  LOCAL_STORAGE_KEY,
+  {
+    status: LoadingStatus.Uninitialized,
+    employees: EMPLOYEE_MOK,
+    error: null,
+  }
+);
 
 const employeesSlice = createSlice({
   name: "employees",
@@ -28,9 +34,10 @@ const employeesSlice = createSlice({
     setEmployees: (state, action: PayloadAction<Employee[]>) => {
       state.employees = action.payload;
     },
+
     setNewEmployee: (state, action: PayloadAction<Employee>) => {
       state.employees = [...state.employees, action.payload];
-      console.log("nico payload", action.payload);
+      saveState(LOCAL_STORAGE_KEY, state);
     },
     setJobsLicenseToEmployee: (
       state,
@@ -43,6 +50,7 @@ const employeesSlice = createSlice({
         const prev = employee.job.licenses ?? [];
         employee.job.licenses = [...prev, ...currentLicense];
       }
+      saveState(LOCAL_STORAGE_KEY, state);
     },
   },
 });

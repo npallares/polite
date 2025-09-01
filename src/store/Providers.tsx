@@ -4,7 +4,19 @@ import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { store } from ".";
 import { setEmployees } from "./employees/employeesSlice";
-import MOK from "../MOK/MOK_EMPLOYESS.json"
+import MOK from "../MOK/MOK_EMPLOYESS.json";
+import { Employee } from "@/types/employees";
+import { loadState } from "@/utils/storage";
+
+interface Props {
+  children: React.ReactNode;
+}
+
+type EmployesState = {
+  employees: Employee[];
+};
+
+const LOCAL_STORAGE_KEY = "employees";
 
 interface Props {
   children: React.ReactNode;
@@ -12,14 +24,15 @@ interface Props {
 
 const Providers = ({ children }: Props) => {
   useEffect(() => {
-    
-    // const persisted = localStorage.getItem("employees") ?? "{}";
+    const fallbackSlice: EmployesState = {
+      employees: MOK,
+    };
+    const persistedSlice = loadState<EmployesState>(
+      LOCAL_STORAGE_KEY,
+      fallbackSlice
+    );
 
-    // console.log("Nico persisted", MOK);
-
-    //const employees = persisted.employees ?? {};
-
-    store.dispatch(setEmployees(MOK));
+    store.dispatch(setEmployees(persistedSlice.employees));
   }, []);
 
   return <Provider store={store}>{children}</Provider>;

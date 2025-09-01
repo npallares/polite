@@ -2,12 +2,32 @@
 
 import { useForm } from "react-hook-form";
 import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
-//import createNewEmployee from "@/utils/createNewEmployee";
-import useColaboradores from "@/hooks/useColaboradores/useColaboradores";
+import { redirect } from "next/navigation";
 
-const FormNewEntry = () => {
-  const { personalDataHandleSubmit, addressDataHandleSubmite } =
-    useColaboradores();
+
+interface Props {
+  personalDataHandleSubmit: (
+    firstName: string,
+    lastName: string,
+    birthDate: string,
+    personalEmail: string,
+    mobilePhone: number,
+    gender: string
+  ) => void;
+  addressDataHandleSubmite: (
+    province: string,
+    city: string,
+    postalCode: string,
+    address: string,
+    apartment: string,
+    floor: string
+  ) => void;
+}
+
+const FormNewEntryPersonalData = ({
+  personalDataHandleSubmit,
+  addressDataHandleSubmite,
+}: Props) => {
   const {
     register,
     handleSubmit,
@@ -81,8 +101,9 @@ const FormNewEntry = () => {
       apartment,
       floor
     );
-    //reset();
-    return console.log("Form colaboradores", "reset");
+    reset();
+    console.log("Form colaboradores", "reset");
+    return redirect("/dashboard_admin/colaboradores/new_entry?step=2");
   });
 
   return (
@@ -175,7 +196,6 @@ const FormNewEntry = () => {
                 <div className="relative">
                   <input
                     id="personalEmail"
-                    type="email"
                     className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
                     /*  placeholder="Ingrese nombre y apellido" */
                     {...register("personalEmail", {
@@ -383,4 +403,4 @@ const FormNewEntry = () => {
   );
 };
 
-export default FormNewEntry;
+export default FormNewEntryPersonalData;
