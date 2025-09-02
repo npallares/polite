@@ -1,6 +1,7 @@
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
+import FormEntryHeader from "./FormEntryHeader";
 
 interface Props {
   workDataHandlerSubmite: (
@@ -47,14 +48,11 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
 
   return (
     <>
-      <div>
-        <h1 className="text-sm mt-6">colaboradores</h1>
-        <h2 className="text-xl font-semibold ">Nuevo Ingreso</h2>
-      </div>
+      <FormEntryHeader step="work" />
 
       {/* FORM */}
       <form
-        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border border-amber-400"
+        className="w-full space-y-6 text-main-stone-900 bg-white ml-8 border border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">

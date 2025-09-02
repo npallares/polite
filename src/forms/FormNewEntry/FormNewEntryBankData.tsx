@@ -2,6 +2,7 @@ import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 import { redirect } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
+import FormEntryHeader from "./FormEntryHeader";
 
 interface Props {
   bankDataHandleSubmite: (
@@ -36,10 +37,7 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
 
   return (
     <>
-      <div>
-        <h1 className="text-sm mt-6">colaboradores</h1>
-        <h2 className="text-xl font-semibold ">Nuevo Ingreso</h2>
-      </div>
+      <FormEntryHeader step="bank" />
 
       {/* FORM */}
       <form
