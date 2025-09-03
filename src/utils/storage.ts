@@ -1,10 +1,9 @@
 export const loadState = <T>(key: string, fallback: T): T => {
+  if (typeof window === "undefined") return fallback; // <-- clave
   try {
-    const serializedState = localStorage.getItem(key);
-    if (serializedState === null) {
-      return fallback; // si no hay nada en localStorage => fallback (MOK)
-    }
-    return JSON.parse(serializedState) as T;
+    const raw = window.localStorage.getItem(key);
+    if (raw == null) return fallback;
+    return JSON.parse(raw) as T;
   } catch (e) {
     console.warn("Error loading state from localStorage:", e);
     return fallback;
@@ -12,9 +11,10 @@ export const loadState = <T>(key: string, fallback: T): T => {
 };
 
 export const saveState = <T>(key: string, state: T): void => {
+  if (typeof window === "undefined") return;
   try {
-    const serializedState = JSON.stringify(state);
-    localStorage.setItem(key, serializedState);
+    const raw = JSON.stringify(state);
+    window.localStorage.setItem(key, raw);
   } catch (e) {
     console.warn("Error saving state to localStorage:", e);
   }
