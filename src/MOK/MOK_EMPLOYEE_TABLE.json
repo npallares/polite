@@ -1,0 +1,50 @@
+[
+  {
+    "id": "EMP-001",
+    "firstName": "Nicolas",
+    "lastName": "Pallares",
+    "rol": "Frontend Developer",
+    "startDate": "2020-01-15",
+    "workBranch": "Buenos Aires"
+  },
+  {
+    "id": "EMP-002",
+    "firstName": "Laura",
+    "lastName": "Gomez",
+    "rol": "Project Manager",
+    "startDate": "2019-03-10",
+    "workBranch": "Córdoba"
+  },
+  {
+    "id": "EMP-003",
+    "firstName": "Martin",
+    "lastName": "Fernandez",
+    "rol": "Backend Developer",
+    "startDate": "2021-07-01",
+    "workBranch": "Rosario"
+  },
+  {
+    "id": "EMP-004",
+    "firstName": "Sofia",
+    "lastName": "Ramirez",
+    "rol": "UX Designer",
+    "startDate": "2018-11-20",
+    "workBranch": "Mendoza"
+  },
+  {
+    "id": "EMP-005",
+    "firstName": "Diego",
+    "lastName": "Lopez",
+    "rol": "QA Engineer",
+    "startDate": "2022-05-05",
+    "workBranch": "La Plata"
+  },
+  {
+    "id": "EMP-006",
+    "firstName": "Valentina",
+    "lastName": "Perez",
+    "rol": "HR Specialist",
+    "startDate": "2017-09-18",
+    "workBranch": "Salta"
+  }
+]

@@ -8,6 +8,7 @@ interface Props {
   isCurrentStep: boolean;
 }
 
+
 const FormEntryVisualStep = ({ step, label, index, isCurrentStep }: Props) => {
   return (
     <div className="w-29 flex flex-col justify-center items-center text-xs">

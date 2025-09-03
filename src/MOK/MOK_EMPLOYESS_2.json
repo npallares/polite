@@ -1,0 +1,342 @@
+[
+  {
+    "id": "UNO-1",
+    "personal": {
+      "firstName": "Nicolas",
+      "lastName": "Pallares",
+      "birthDate": "24-05-1998",
+      "personalEmail": "nicolas@polite.com.ar",
+      "mobilePhone": 123456789,
+      "gender": "male",
+      "address": "Calle 123",
+      "dni": 12345678
+    },
+    "job": {
+      "workEmail": "n.pallares@empresa.com",
+      "startDate": "01-01-2020",
+      "workBranch": "Buenos Aires",
+      "area": "IT",
+      "rol": "Developer",
+      "licenses": [],
+      "reportsTo": "UNO-5"
+    },
+    "bank": {
+      "contractType": "permanent",
+      "cuil": "20123456789",
+      "bank": "Banco Nación",
+      "cbu": "2850590940090412345671"
+    },
+    "emergencyContact": {
+      "firstName": "Maria",
+      "lastName": "Lopez",
+      "relationship": "sister",
+      "mobilePhone": 1145678901
+    }
+  },
+  {
+    "id": "UNO-2",
+    "personal": {
+      "firstName": "Laura",
+      "lastName": "Gomez",
+      "birthDate": "12-07-1995",
+      "personalEmail": "laura.gomez@mail.com",
+      "mobilePhone": 113456789,
+      "gender": "female",
+      "address": "Av. Libertad 456",
+      "dni": 23456789
+    },
+    "job": {
+      "workEmail": "l.gomez@empresa.com",
+      "startDate": "15-03-2021",
+      "workBranch": "Córdoba",
+      "area": "Marketing",
+      "rol": "Manager",
+      "licenses": [],
+      "reportsTo": "UNO-1"
+    },
+    "bank": {
+      "contractType": "temporary",
+      "cuil": "27234567890",
+      "bank": "Banco Galicia",
+      "cbu": "0070590940090412345672"
+    },
+    "emergencyContact": {
+      "firstName": "Carlos",
+      "lastName": "Gomez",
+      "relationship": "father",
+      "mobilePhone": 1156789012
+    }
+  },
+  {
+    "id": "UNO-3",
+    "personal": {
+      "firstName": "Martin",
+      "lastName": "Fernandez",
+      "birthDate": "03-11-1988",
+      "personalEmail": "martin.fernandez@mail.com",
+      "mobilePhone": 114567890,
+      "gender": "male",
+      "address": "Calle San Martín 789",
+      "dni": 34567890
+    },
+    "job": {
+      "workEmail": "m.fernandez@empresa.com",
+      "startDate": "10-05-2018",
+      "workBranch": "Rosario",
+      "area": "Ventas",
+      "rol": "Ejecutivo",
+      "licenses": [],
+      "reportsTo": "UNO-2"
+    },
+    "bank": {
+      "contractType": "permanent",
+      "cuil": "20345678901",
+      "bank": "Banco Santander",
+      "cbu": "0720590940090412345673"
+    },
+    "emergencyContact": {
+      "firstName": "Lucia",
+      "lastName": "Martinez",
+      "relationship": "wife",
+      "mobilePhone": 1167890123
+    }
+  },
+  {
+    "id": "UNO-4",
+    "personal": {
+      "firstName": "Sofia",
+      "lastName": "Ramirez",
+      "birthDate": "09-01-1993",
+      "personalEmail": "sofia.ramirez@mail.com",
+      "mobilePhone": 115678901,
+      "gender": "female",
+      "address": "Mitre 1010",
+      "dni": 45678901
+    },
+    "job": {
+      "workEmail": "s.ramirez@empresa.com",
+      "startDate": "02-09-2019",
+      "workBranch": "Mendoza",
+      "area": "Recursos Humanos",
+      "rol": "Analista",
+      "licenses": [],
+      "reportsTo": "UNO-1"
+    },
+    "bank": {
+      "contractType": "one",
+      "cuil": "27456789012",
+      "bank": "Banco Macro",
+      "cbu": "2850590940090412345674"
+    },
+    "emergencyContact": {
+      "firstName": "Julian",
+      "lastName": "Ramirez",
+      "relationship": "brother",
+      "mobilePhone": 1178901234
+    }
+  },
+  {
+    "id": "UNO-5",
+    "personal": {
+      "firstName": "Diego",
+      "lastName": "Lopez",
+      "birthDate": "22-06-1990",
+      "personalEmail": "diego.lopez@mail.com",
+      "mobilePhone": 116789012,
+      "gender": "male",
+      "address": "San Juan 222",
+      "dni": 56789012
+    },
+    "job": {
+      "workEmail": "d.lopez@empresa.com",
+      "startDate": "20-07-2017",
+      "workBranch": "Buenos Aires",
+      "area": "Finanzas",
+      "rol": "Contador",
+      "licenses": [],
+      "reportsTo": "UNO-3"
+    },
+    "bank": {
+      "contractType": "permanent",
+      "cuil": "20567890123",
+      "bank": "HSBC",
+      "cbu": "1500590940090412345675"
+    },
+    "emergencyContact": {
+      "firstName": "Carolina",
+      "lastName": "Lopez",
+      "relationship": "spouse",
+      "mobilePhone": 1189012345
+    }
+  },
+  {
+    "id": "UNO-6",
+    "personal": {
+      "firstName": "Valentina",
+      "lastName": "Perez",
+      "birthDate": "05-08-1996",
+      "personalEmail": "valentina.perez@mail.com",
+      "mobilePhone": 117890123,
+      "gender": "female",
+      "address": "Av. Colón 333",
+      "dni": 67890123
+    },
+    "job": {
+      "workEmail": "v.perez@empresa.com",
+      "startDate": "11-11-2022",
+      "workBranch": "Salta",
+      "area": "Atención al Cliente",
+      "rol": "Representante",
+      "licenses": [],
+      "reportsTo": "UNO-2"
+    },
+    "bank": {
+      "contractType": "temporary",
+      "cuil": "27678901234",
+      "bank": "Banco BBVA",
+      "cbu": "0170590940090412345676"
+    },
+    "emergencyContact": {
+      "firstName": "Fernando",
+      "lastName": "Perez",
+      "relationship": "father",
+      "mobilePhone": 1190123456
+    }
+  },
+  {
+    "id": "UNO-7",
+    "personal": {
+      "firstName": "Marcos",
+      "lastName": "Diaz",
+      "birthDate": "14-12-1985",
+      "personalEmail": "marcos.diaz@mail.com",
+      "mobilePhone": 118901234,
+      "gender": "male",
+      "address": "Belgrano 444",
+      "dni": 78901234
+    },
+    "job": {
+      "workEmail": "m.diaz@empresa.com",
+      "startDate": "25-02-2015",
+      "workBranch": "Santa Fe",
+      "area": "Operaciones",
+      "rol": "Supervisor",
+      "licenses": [],
+      "reportsTo": "UNO-5"
+    },
+    "bank": {
+      "contractType": "permanent",
+      "cuil": "20789012345",
+      "bank": "Banco Patagonia",
+      "cbu": "0340590940090412345677"
+    },
+    "emergencyContact": {
+      "firstName": "Andrea",
+      "lastName": "Diaz",
+      "relationship": "wife",
+      "mobilePhone": 1101234567
+    }
+  },
+  {
+    "id": "UNO-8",
+    "personal": {
+      "firstName": "Camila",
+      "lastName": "Martinez",
+      "birthDate": "30-03-1997",
+      "personalEmail": "camila.martinez@mail.com",
+      "mobilePhone": 119012345,
+      "gender": "female",
+      "address": "Av. Rivadavia 555",
+      "dni": 89012345
+    },
+    "job": {
+      "workEmail": "c.martinez@empresa.com",
+      "startDate": "09-06-2020",
+      "workBranch": "Neuquén",
+      "area": "Logística",
+      "rol": "Analista",
+      "licenses": [],
+      "reportsTo": "UNO-4"
+    },
+    "bank": {
+      "contractType": "one",
+      "cuil": "27890123456",
+      "bank": "Banco ICBC",
+      "cbu": "0150590940090412345678"
+    },
+    "emergencyContact": {
+      "firstName": "Luis",
+      "lastName": "Martinez",
+      "relationship": "brother",
+      "mobilePhone": 1112345678
+    }
+  },
+  {
+    "id": "UNO-9",
+    "personal": {
+      "firstName": "Agustin",
+      "lastName": "Torres",
+      "birthDate": "18-04-1992",
+      "personalEmail": "agustin.torres@mail.com",
+      "mobilePhone": 110123456,
+      "gender": "male",
+      "address": "Córdoba 666",
+      "dni": 90123456
+    },
+    "job": {
+      "workEmail": "a.torres@empresa.com",
+      "startDate": "18-10-2016",
+      "workBranch": "La Plata",
+      "area": "Legal",
+      "rol": "Abogado",
+      "licenses": [],
+      "reportsTo": "UNO-7"
+    },
+    "bank": {
+      "contractType": "permanent",
+      "cuil": "20901234567",
+      "bank": "Banco Ciudad",
+      "cbu": "0290590940090412345679"
+    },
+    "emergencyContact": {
+      "firstName": "Florencia",
+      "lastName": "Torres",
+      "relationship": "sister",
+      "mobilePhone": 1123456789
+    }
+  },
+  {
+    "id": "UNO-10",
+    "personal": {
+      "firstName": "Julieta",
+      "lastName": "Suarez",
+      "birthDate": "07-09-1994",
+      "personalEmail": "julieta.suarez@mail.com",
+      "mobilePhone": 111234567,
+      "gender": "female",
+      "address": "San Lorenzo 777",
+      "dni": 91234567
+    },
+    "job": {
+      "workEmail": "j.suarez@empresa.com",
+      "startDate": "13-04-2021",
+      "workBranch": "Tucumán",
+      "area": "Diseño",
+      "rol": "UI Designer",
+      "licenses": [],
+      "reportsTo": "UNO-8"
+    },
+    "bank": {
+      "contractType": "temporary",
+      "cuil": "27912345678",
+      "bank": "Banco Supervielle",
+      "cbu": "0270590940090412345680"
+    },
+    "emergencyContact": {
+      "firstName": "Pedro",
+      "lastName": "Suarez",
+      "relationship": "father",
+      "mobilePhone": 1134567890
+    }
+  }
+]

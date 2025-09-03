@@ -1,6 +1,6 @@
 import { Employee, Licenses } from "@/types/employees";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import EMPLOYEE_MOK from "../../MOK/MOK_EMPLOYESS.json";
+import EMPLOYEE_MOK from "../../MOK/MOK_EMPLOYESS_2.json";
 import { RootState } from "../index";
 import { loadState, saveState } from "@/utils/storage";
 
@@ -53,6 +53,6 @@ const employeesSlice = createSlice({
 
 export const { setEmployees, setJobsLicenseToEmployee, setNewEmployee } =
   employeesSlice.actions;
-export const selectEmployees = (state: RootState) => state.employees;
+export const selectEmployees = (state: RootState) => state.employees.employees;
 
 export default employeesSlice.reducer;

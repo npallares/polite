@@ -21,7 +21,7 @@ interface Props {
 const useLicense = ({ id }: Props): UseLicense => {
   const dispatch = useAppDispatch();
   const employees = useAppSelector(selectEmployees);
-  const currentEmployee = employees.employees.find((e) => e.id === id) ?? null;
+  const currentEmployee = employees.find((e) => e.id === id) ?? null;
   const [licenseData, setLicenseData] = useState<Licenses | null>(null);
 
   useEffect(() => {
