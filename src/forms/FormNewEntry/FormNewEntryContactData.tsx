@@ -2,7 +2,6 @@ import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 import { redirect } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
-import FormEntryHeader from "./FormEntryHeader";
 
 interface Props {
   contactDataHandleSubmite: (
@@ -13,7 +12,9 @@ interface Props {
   ) => void;
 }
 
-const FormNewEntryContactData = ({ contactDataHandleSubmite }: Props) => {
+const FormNewEntryContactData = ({
+  contactDataHandleSubmite,
+}: Props) => {
   const {
     register,
     handleSubmit,
@@ -33,7 +34,6 @@ const FormNewEntryContactData = ({ contactDataHandleSubmite }: Props) => {
     if (!dataComprobation) return;
 
     contactDataHandleSubmite(firstName, lastName, relationship, mobilePhone);
-    
 
     reset();
     return redirect("/dashboard_admin/colaboradores/");
@@ -41,11 +41,10 @@ const FormNewEntryContactData = ({ contactDataHandleSubmite }: Props) => {
 
   return (
     <>
-      <FormEntryHeader step="contact" />
 
       {/* FORM */}
       <form
-        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border border-amber-400"
+        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">

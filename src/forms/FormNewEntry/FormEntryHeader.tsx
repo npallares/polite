@@ -3,16 +3,16 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import FormEntryVisualStep from "./FormEntryVisualStep";
 
 interface Props {
-  step: string;
+  step: number;
 }
 
-type Step = { id: string; label: string };
+type Step = { id: string; label: string; stepInForm: number };
 
 const steps: Step[] = [
-  { id: "personal", label: "Información personal" },
-  { id: "bank", label: "Datos fiscales y bancarios" },
-  { id: "work", label: "Información laboral" },
-  { id: "contact", label: "Contacto de emergencia" },
+  { id: "personal", label: "Información personal", stepInForm: 1 },
+  { id: "bank", label: "Datos fiscales y bancarios", stepInForm: 2 },
+  { id: "work", label: "Información laboral", stepInForm: 3 },
+  { id: "contact", label: "Contacto de emergencia", stepInForm: 4 },
 ];
 
 const FormEntryHeader = ({ step }: Props) => {
@@ -27,15 +27,16 @@ const FormEntryHeader = ({ step }: Props) => {
       </h2>
       <div className="flex w-auto">
         {steps.map((el, i) => {
-          const { label, id } = el;
-          const isCurrentStep = step === id;
+          const { label, id, stepInForm } = el;
+          const isCurrentStep = step === stepInForm;
+          const isDone = step > stepInForm;
           return (
-            <div key={id} className="mr-2 border border-amber-500">
+            <div key={id} className="mr-2">
               <FormEntryVisualStep
                 index={i}
-                step={id}
                 label={label}
                 isCurrentStep={isCurrentStep}
+                isDone={isDone}
               />
             </div>
           );

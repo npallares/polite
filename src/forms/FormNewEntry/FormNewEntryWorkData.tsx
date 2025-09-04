@@ -1,7 +1,6 @@
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
-import FormEntryHeader from "./FormEntryHeader";
 
 interface Props {
   workDataHandlerSubmite: (
@@ -25,7 +24,7 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
   });
 
   const onSubmit = handleSubmit((data) => {
-    const { workEmail, startDate, workBranch, area, reportsTo, rol } = data;
+    const { workEmail, startDate, workBranch, area, rol, reportsTo } = data;
 
     const dataComprobation = Boolean(
       workEmail && startDate && workBranch && rol && area && reportsTo
@@ -37,22 +36,21 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
       workEmail,
       startDate,
       workBranch,
-      rol,
       area,
+      rol,
       reportsTo
     );
-
     reset();
+    
     return redirect("/dashboard_admin/colaboradores/new_entry?step=4");
   });
 
   return (
     <>
-      <FormEntryHeader step="work" />
 
       {/* FORM */}
       <form
-        className="w-full space-y-6 text-main-stone-900 bg-white ml-8 border border-amber-400"
+        className="w-full space-y-6 text-main-stone-900 bg-white ml-8border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">

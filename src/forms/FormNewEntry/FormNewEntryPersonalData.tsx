@@ -22,11 +22,13 @@ interface Props {
     apartment: string,
     floor: string
   ) => void;
+  
 }
 
 const FormNewEntryPersonalData = ({
   personalDataHandleSubmit,
   addressDataHandleSubmite,
+ 
 }: Props) => {
   const {
     register,
@@ -92,11 +94,11 @@ const FormNewEntryPersonalData = ({
 
   return (
     <>
-      <FormEntryHeader step="personal" />
+      
 
       {/* FORM */}
       <form
-        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border border-amber-400"
+        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">

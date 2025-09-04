@@ -30,18 +30,16 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
 
     if (dataComprobation) return;
     bankDataHandleSubmite(contractType, cuil, bank, cbu);
-
     reset();
     return redirect("/dashboard_admin/colaboradores/new_entry?step=3");
   });
 
   return (
     <>
-      <FormEntryHeader step="bank" />
 
       {/* FORM */}
       <form
-        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border border-amber-400"
+        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">

@@ -15,6 +15,19 @@ const useEmployeeTable = (): UseEmployeeTable => {
     EmployeeInTable[] | null
   >(null);
   useEffect(() => {
+    if (employees) {
+      const newData = employees.map((el) => ({
+        id: el.id,
+        firstName: el.personal.firstName,
+        lastName: el.personal.lastName,
+        rol: el.job.rol,
+        startDate: el.job.startDate,
+        workBranch: el.job.workBranch,
+        status: true,
+        actions: "Ver Perfil",
+      }));
+      return setEmployeesTable(newData);
+    }
     const newData = MOKDATA.map((el) => ({
       id: el.id,
       firstName: el.personal.firstName,
