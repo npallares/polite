@@ -1,12 +1,14 @@
-import FormNewEntryWrapper from '@/forms/FormNewEntry/FormNewEntryWrapper';
-import React from 'react'
+import FormNewEntryWrapper from "@/forms/FormNewEntry/FormNewEntryWrapper";
+import React, { Suspense } from "react";
 
 const page = () => {
   return (
     <div>
-      <FormNewEntryWrapper />
+      <Suspense fallback={null /* o un skeleton */}>
+        <FormNewEntryWrapper />
+      </Suspense>
     </div>
   );
-}
+};
 
-export default page
+export default page;
