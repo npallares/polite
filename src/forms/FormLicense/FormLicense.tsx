@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import Icons from "@/components/Icons";
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
+import CustomCalendar from "@/components/CustomCalendar/CustomCalendar";
+import { format } from "date-fns";
 
 interface Props {
   licenseDataHandleSubmit: (to: string, from: string, type: string) => void;
@@ -16,15 +18,21 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
     handleSubmit,
     formState: { isValid },
     reset,
+    control,
   } = useForm({
     mode: "onChange", // importante para que isValid se actualice al tipear
   });
 
   const onSubmit = handleSubmit((data) => {
     const { licenseFrom, licenseType, licenseTo } = data;
+    console.log("nico data", data);
     const dataComprobation = Boolean(licenseFrom && licenseType && licenseTo);
     if (!dataComprobation) return;
-    licenseDataHandleSubmit(licenseTo, licenseFrom, licenseType);
+    licenseDataHandleSubmit(
+      format(licenseFrom, "yyyy-MM-dd"),
+      licenseTo,
+      licenseType
+    );
     return reset();
   });
 
@@ -68,20 +76,19 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
         <div className="flex flex-col gap-4">
           <section className="flex gap-6">
             <div className="space-y-2">
-              <label htmlFor="desde" className="block text-sm font-normal">
-                Desde <span className="text-red-500 text-[10px]">*</span>
-              </label>
-              <div className="flex flex-col gap-2 w-64">
-                <input
-                  {...register("licenseFrom", {
-                    required: true,
-                  })}
-                  id="date"
-                  type="date"
-                  placeholder="Seleccioná una fecha"
-                  className="text-sm block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
+              <Controller
+                name="licenseFrom"
+                control={control}
+                rules={{ required: true }}
+                render={({
+                  field: { onChange, value },
+                }) => (
+                  <CustomCalendar
+                    selectedDate={value}
+                    onDateChange={onChange}
+                  />
+                )}
+              />
             </div>
 
             <div className="space-y-2">
