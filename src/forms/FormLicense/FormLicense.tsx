@@ -5,7 +5,7 @@ import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import Icons from "@/components/Icons";
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
-import CustomCalendar from "@/components/CustomCalendar/CustomCalendar";
+import CustomCalendar from "@/components/CustomDatePicker/CustomCalendar";
 import { format } from "date-fns";
 
 interface Props {
@@ -30,7 +30,7 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
     if (!dataComprobation) return;
     licenseDataHandleSubmit(
       format(licenseFrom, "yyyy-MM-dd"),
-      licenseTo,
+      format(licenseTo, "yyyy-MM-dd"),
       licenseType
     );
     return reset();
@@ -60,9 +60,9 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
             <option value="" disabled>
               Seleccionar
             </option>
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
+            <option value="VACATION">Vacaciones</option>
+            <option value="PARENTAL_LEAVE">Maternidad / Paternidad</option>
+            <option value="SICK_LEAVE">Enfermedad</option>
           </select>
         </div>
 
@@ -80,10 +80,9 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
                 name="licenseFrom"
                 control={control}
                 rules={{ required: true }}
-                render={({
-                  field: { onChange, value },
-                }) => (
+                render={({ field: { onChange, value } }) => (
                   <CustomCalendar
+                    label={"Desde"}
                     selectedDate={value}
                     onDateChange={onChange}
                   />
@@ -92,19 +91,18 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="hasta" className="block text-sm font-normal">
-                Hasta{" "}
-                <span className="absolute text-red-500 text-[8px] pl-1">*</span>
-              </label>
-              <div className="flex flex-col gap-2 w-64">
-                <input
-                  {...register("licenseTo", { required: true })}
-                  id="date"
-                  type="date"
-                  placeholder="Seleccioná una fecha"
-                  className="text-sm block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
+              <Controller
+                name="licenseTo"
+                control={control}
+                rules={{ required: true }}
+                render={({ field: { onChange, value } }) => (
+                  <CustomCalendar
+                    label={"Hasta"}
+                    selectedDate={value}
+                    onDateChange={onChange}
+                  />
+                )}
+              />
             </div>
           </section>
 

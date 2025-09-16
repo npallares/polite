@@ -5,13 +5,17 @@ import { useState, useRef, useEffect } from "react";
 import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
+import { IoCalendarOutline } from "react-icons/io5";
 
 type CustomCalendarProps = {
+  icon?: React.ReactNode;
+  label: string;
   selectedDate: Date | undefined;
   onDateChange: (date: Date | undefined) => void;
 };
 
 export default function CustomCalendar({
+  label,
   selectedDate,
   onDateChange,
 }: CustomCalendarProps) {
@@ -30,19 +34,22 @@ export default function CustomCalendar({
   }, []);
 
   return (
-    <div className="relative inline-block" ref={ref}>
-      <label className="block text-sm font-normal mb-2" htmlFor="licenseTo">
-        Hasta <span className="text-red-500 text-[8px] pl-1">*</span>
+    <section className="relative inline-block w-50" ref={ref}>
+      <label className="block text-sm font-normal mb-2">
+        {label} <span className="text-red-500 text-[8px] pl-1">*</span>
       </label>
-      <label
+      <div
         onClick={() => setOpen(!open)}
-        className="text-sm block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
+        className="text-sm flex justify-start items-center border w-full rounded-lg border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
       >
-        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : "Selecciona fecha"}
-      </label>
+        <div className="flex justify-start items-center gap-2 w-full">
+          {<IoCalendarOutline className="w-4 h-4" />}
+          {selectedDate ? format(selectedDate, "dd/MM/yyyy") : "DD-MM-AA"}
+        </div>
+      </div>
 
       {open && (
-        <div className="absolute z-10 mt-2 bg-white shadow-lg rounded-md">
+        <div className="absolute z-10 mt-2 bg-white shadow-lg rounded-md ">
           <DayPicker
             captionLayout="dropdown-years"
             mode="single"
@@ -52,7 +59,7 @@ export default function CustomCalendar({
               setOpen(false);
             }}
             classNames={{
-              today: "text-primary border border-primary",
+              today: "text-primary",
               selected:
                 "border-primary bg-primary rounded-3xl text-white border-0",
               root: `${defaultClassNames.root} shadow-lg p-5 outline-0 ring-0`,
@@ -61,7 +68,6 @@ export default function CustomCalendar({
           />
         </div>
       )}
-    </div>
+    </section>
   );
 }
-  

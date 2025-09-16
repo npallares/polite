@@ -21,7 +21,7 @@ const TertiaryButton: React.FC<TertiaryButtonProps> = ({
       className={`flex justify-center border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-black transition cursor-pointer ${className}`}
     >
       {icon && <span className="icon mr-5">{icon}</span>}
-      <span>{value}</span>
+      <span>{value}</span>s
     </button>
   );
 };
