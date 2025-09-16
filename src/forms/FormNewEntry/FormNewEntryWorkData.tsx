@@ -1,6 +1,8 @@
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 import { redirect } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { format } from "date-fns";
+import CustomCalendar from "@/components/CustomDatePicker/CustomCalendar";
 
 interface Props {
   workDataHandlerSubmite: (
@@ -19,6 +21,7 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
     handleSubmit,
     formState: { isValid },
     reset,
+    control,
   } = useForm({
     mode: "onChange", // importante para que isValid se actualice al tipear
   });
@@ -34,23 +37,22 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
 
     workDataHandlerSubmite(
       workEmail,
-      startDate,
+      format(startDate, "dd-MM-yyyy"),
       workBranch,
       area,
       rol,
       reportsTo
     );
     reset();
-    
+
     return redirect("/dashboard_admin/colaboradores/new_entry?step=4");
   });
 
   return (
     <>
-
       {/* FORM */}
       <form
-        className="w-full space-y-6 text-main-stone-900 bg-white ml-8border-amber-400"
+        className="w-full pl-9 space-y-6 text-main-stone-900 bg-white ml-8border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">
@@ -74,31 +76,30 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                     className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
                     {...register("workEmail", {
                       required: true,
+                      pattern: {
+                        value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                        message: "Formato de email inválido",
+                      },
                     })}
                   ></input>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label
-                  htmlFor="startDate"
-                  className="block text-sm font-normal"
-                >
-                  {"Fecha de Inicio "}
-                  <span className="text-red-500 text-[10px]">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    id="startDate"
-                    type="date"
-                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
-                    /*  placeholder="Ingrese nombre y apellido" */
-                    {...register("startDate", {
-                      required: true,
-                    })}
-                  ></input>
-                </div>
+              <div className="space-y-2 w-70">
+                <Controller
+                  name="startDate"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field: { onChange, value } }) => (
+                    <CustomCalendar
+                      label={"Fecha de inicio"}
+                      selectedDate={value}
+                      onDateChange={onChange}
+                    />
+                  )}
+                />
               </div>
+
               <div className="space-y-2">
                 <label
                   htmlFor="workBranch"

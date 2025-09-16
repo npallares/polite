@@ -87,7 +87,7 @@ const useColaboradores = (): UseColaboradores => {
     mobilePhone: number,
     gender: string
   ) => {
-    setPersonalData({
+    return setPersonalData({
       firstName,
       lastName,
       birthDate,

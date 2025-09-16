@@ -6,6 +6,8 @@ import {
   JobInformation,
   PersonalData,
 } from "@/types/employees";
+
+import { format } from "date-fns";
 interface Props {
   personalData: PersonalData;
   addressData: AddressData;
@@ -34,12 +36,15 @@ const createNewEmployee = ({
     mobilePhone: contactMobilePhone,
   } = contactData;
 
+  const birthDateData = new Date(birthDate);
+  const birthDateFormated = format(birthDateData, "dd-MM-yyyy");
+
   const newEmploye: Employee = {
     id: `${firstName}${lastName}`,
     personal: {
       firstName,
       lastName,
-      birthDate,
+      birthDate: birthDateFormated,
       personalEmail,
       gender,
       mobilePhone,
@@ -66,11 +71,11 @@ const createNewEmployee = ({
       bank,
       cbu,
     },
-    emergencyContact:{
+    emergencyContact: {
       firstName: contactFirstName,
       lastName: contactLastName,
       relationship: relationship,
-      mobilePhone: contactMobilePhone
+      mobilePhone: contactMobilePhone,
     },
   };
   return newEmploye;

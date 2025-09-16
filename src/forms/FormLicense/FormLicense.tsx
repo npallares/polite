@@ -29,8 +29,8 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
     const dataComprobation = Boolean(licenseFrom && licenseType && licenseTo);
     if (!dataComprobation) return;
     licenseDataHandleSubmit(
-      format(licenseFrom, "yyyy-MM-dd"),
-      format(licenseTo, "yyyy-MM-dd"),
+      format(licenseFrom, "dd-MM-yyyy"),
+      format(licenseTo, "dd-MM-yyyy"),
       licenseType
     );
     return reset();
@@ -48,10 +48,10 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
         <label htmlFor="tipo" className="block text-sm font-normal">
           Tipo de licencia <span className="text-red-500 text-[10px]">*</span>
         </label>
-        <div className="relative">
+        <div className="relative flex w-92">
           <select
             id="tipo"
-            className="w-50 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+            className="w-92 text-main-stone-800 appearance-none rounded-sm border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
             defaultValue=""
             {...register("licenseType", {
               required: true,
@@ -64,9 +64,12 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
             <option value="PARENTAL_LEAVE">Maternidad / Paternidad</option>
             <option value="SICK_LEAVE">Enfermedad</option>
           </select>
+          <Image
+            alt="caret"
+            src={Icons.Caret}
+            className="absolute right-0 top-4 mr-4"
+          />
         </div>
-
-        <Image alt="caret" src={Icons.Caret} className="absolute -mt-7 ml-43" />
       </div>
 
       {/* Seleccioná la fecha */}
@@ -75,7 +78,7 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
 
         <div className="flex flex-col gap-4">
           <section className="flex gap-6">
-            <div className="space-y-2">
+            <div className="space-y-2 w-92">
               <Controller
                 name="licenseFrom"
                 control={control}
@@ -90,7 +93,7 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 w-92">
               <Controller
                 name="licenseTo"
                 control={control}

@@ -1,9 +1,10 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
 import { redirect } from "next/navigation";
-import FormEntryHeader from "./FormEntryHeader";
+import CustomCalendar from "@/components/CustomDatePicker/CustomCalendar";
+import { format } from "date-fns";
 
 interface Props {
   personalDataHandleSubmit: (
@@ -22,19 +23,18 @@ interface Props {
     apartment: string,
     floor: string
   ) => void;
-  
 }
 
 const FormNewEntryPersonalData = ({
   personalDataHandleSubmit,
   addressDataHandleSubmite,
- 
 }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { isValid },
     reset,
+    control,
   } = useForm({
     mode: "onChange", // importante para que isValid se actualice al tipear
   });
@@ -94,11 +94,9 @@ const FormNewEntryPersonalData = ({
 
   return (
     <>
-      
-
       {/* FORM */}
       <form
-        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8 border-amber-400"
+        className="w-full  space-y-6 text-main-stone-900 bg-white pl-9 border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">
@@ -144,25 +142,19 @@ const FormNewEntryPersonalData = ({
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label
-                  htmlFor="birthDate"
-                  className="block text-sm font-normal"
-                >
-                  {"Fecha de nacimiento "}
-                  <span className="text-red-500 text-[10px]">*</span>
-                </label>
-                <div className="flex flex-col gap-2 w-64">
-                  <input
-                    {...register("birthDate", {
-                      required: true,
-                    })}
-                    id="birthDate"
-                    type="date"
-                    /*  placeholder="Seleccioná una fecha" */
-                    className="w-68 text-sm block  rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  />
-                </div>
+              <div className="space-y-2 w-70">
+                <Controller
+                  name="birthDate"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field: { onChange, value } }) => (
+                    <CustomCalendar
+                      label={"Fecha de nacimiento"}
+                      selectedDate={value}
+                      onDateChange={onChange}
+                    />
+                  )}
+                />
               </div>
             </section>
 
@@ -183,6 +175,10 @@ const FormNewEntryPersonalData = ({
                     /*  placeholder="Ingrese nombre y apellido" */
                     {...register("personalEmail", {
                       required: true,
+                      pattern: {
+                        value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                        message: "Formato de email inválido",
+                      },
                     })}
                   ></input>
                 </div>

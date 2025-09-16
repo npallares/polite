@@ -28,12 +28,13 @@ const FormEntryHeader = ({ step }: Props) => {
       <div className="flex w-auto">
         {steps.map((el, i) => {
           const { label, id, stepInForm } = el;
+          const stepCounter = Number(i + 1);
           const isCurrentStep = step === stepInForm;
           const isDone = step > stepInForm;
           return (
             <div key={id} className="mr-2">
               <FormEntryVisualStep
-                index={i}
+                index={stepCounter}
                 label={label}
                 isCurrentStep={isCurrentStep}
                 isDone={isDone}

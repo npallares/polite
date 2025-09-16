@@ -16,7 +16,7 @@ const InfoCards = () => {
         return (
           <div
             key={i}
-            className="w-auto h-auto mx-3 mb-7 flex-1 justify-center items-center p-3 rounded-lg bg-main-stone-500 border border-main-stone-600 text-sm font-light last:mr-0 text-main-stone-900"
+            className="w-auto h-auto mr-3 mb-7 flex-1 justify-center items-center p-3 rounded-lg bg-main-stone-500 border border-main-stone-600 text-sm font-light last:mr-0 text-main-stone-900"
           >
             <p className="text-main-stone-900">{label}</p>
             <p className="mt-1 text-lg font-semibold text-main-stone-900">

@@ -41,10 +41,9 @@ const FormNewEntryContactData = ({
 
   return (
     <>
-
       {/* FORM */}
       <form
-        className="w-full  space-y-6 text-main-stone-900 bg-white ml-8border-amber-400"
+        className="w-full pl-9 space-y-6 text-main-stone-900 bg-white ml-8border-amber-400"
         onSubmit={onSubmit}
       >
         <div className="space-y-3">

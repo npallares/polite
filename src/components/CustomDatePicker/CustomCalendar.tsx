@@ -12,6 +12,7 @@ type CustomCalendarProps = {
   label: string;
   selectedDate: Date | undefined;
   onDateChange: (date: Date | undefined) => void;
+  className?: string;
 };
 
 export default function CustomCalendar({
@@ -34,17 +35,17 @@ export default function CustomCalendar({
   }, []);
 
   return (
-    <section className="relative inline-block w-50" ref={ref}>
+    <section className="relative inline-block w-full" ref={ref}>
       <label className="block text-sm font-normal mb-2">
         {label} <span className="text-red-500 text-[8px] pl-1">*</span>
       </label>
       <div
         onClick={() => setOpen(!open)}
-        className="text-sm flex justify-start items-center border w-full rounded-lg border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
+        className="text-sm flex justify-start items-center border w-full rounded-sm border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
       >
         <div className="flex justify-start items-center gap-2 w-full">
           {<IoCalendarOutline className="w-4 h-4" />}
-          {selectedDate ? format(selectedDate, "dd/MM/yyyy") : "DD-MM-AA"}
+          {selectedDate ? format(selectedDate, "dd-MM-yyyy") : "DD-MM-AA"}
         </div>
       </div>
 
@@ -58,12 +59,15 @@ export default function CustomCalendar({
               onDateChange(date);
               setOpen(false);
             }}
+            defaultMonth={selectedDate}
             classNames={{
               today: "text-primary",
               selected:
                 "border-primary bg-primary rounded-3xl text-white border-0",
               root: `${defaultClassNames.root} shadow-lg p-5 outline-0 ring-0`,
               chevron: "fill-main-stone-800",
+              caption_label: `${defaultClassNames.caption_label} text-base font-light text-main-stone-700 ml-1`,
+              month_caption: `text-base font-light text-main-stone-700 h-10 pt-3`,
             }}
           />
         </div>

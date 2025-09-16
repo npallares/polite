@@ -11,9 +11,9 @@ const page = () => {
     return redirect("/dashboard_admin/colaboradores/new_entry?step=1");
   };
   return (
-    <section>
+    <section className="px-8">
       <div className="w-full justify-between flex mt-9 mb-10">
-        <p className="flex items-center gap-2 mb-3 ml-4 text-2xl font-semibold text-main-stone-900">Colaboradores</p>
+        <p className="flex items-center gap-2 mb-3 text-2xl font-semibold text-main-stone-900">Colaboradores</p>
         <PrimaryButton value={"Nuevo colaborador"} onClick={handleClick} />
       </div>
       <div>

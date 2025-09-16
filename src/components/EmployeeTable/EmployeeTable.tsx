@@ -12,6 +12,7 @@ import {
 } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
 import StatusPill from "../StatusPill/StatusPill";
+import { IoChevronDownSharp } from "react-icons/io5";
 
 export type EmployeeInTable = {
   id: string;
@@ -72,7 +73,7 @@ const EmployeeTable = () => {
 
   return (
     <>
-      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ml-4">
+      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ">
         <p className="p-3 text-main-stone-900 font-semibold border-b-1 border-gray-200">
           {"colaboradores"}
         </p>
@@ -104,17 +105,17 @@ const EmployeeTable = () => {
         <table className="w-full text-sm">
           <thead className="bg-gray-50">
             {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
+              <tr key={headerGroup.id} className=" border-amber-500 ">
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
                     colSpan={header.colSpan}
-                    className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-600"
+                    className="px-4 py-3 text-left font-light tracking-wide text-gray-600"
                   >
                     {header.isPlaceholder ? null : header.column.getCanSort() ? (
-                      <button
+                      <div
                         onClick={header.column.getToggleSortingHandler()}
-                        className="inline-flex items-center gap-1 hover:text-gray-800"
+                        className="inline-flex items-center gap-1 hover:text-primary"
                       >
                         {flexRender(
                           header.column.columnDef.header,
@@ -134,7 +135,7 @@ const EmployeeTable = () => {
                         >
                           <path d="M5 7l5 5 5-5" fill="currentColor" />
                         </svg>
-                      </button>
+                      </div>
                     ) : (
                       flexRender(
                         header.column.columnDef.header,
@@ -182,8 +183,9 @@ const EmployeeTable = () => {
 
         {/* Footer opcional (paginación / cargar más) */}
         <div className="flex items-center justify-center p-3">
-          <button className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
-            Cargar más
+          <button className="flex cursor-pointer items-center h-12 border rounded border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+            <span>Cargar más</span>
+            <IoChevronDownSharp className="w-5 h-5 ml-2" />
           </button>
         </div>
       </div>
