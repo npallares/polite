@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import StatusPill from "../StatusPill/StatusPill";
 import { IoChevronDownSharp } from "react-icons/io5";
+import { parse } from "date-fns";
 
 export type EmployeeInTable = {
   id: string;
@@ -29,7 +30,17 @@ const columns: ColumnDef<EmployeeInTable>[] = [
   { header: "Nombre", accessorKey: "firstName" },
   { header: "Apellido", accessorKey: "lastName", filterFn: "includesString" },
   { header: "Rol", accessorKey: "rol" },
-  { header: "Fecha de inicio", accessorKey: "startDate" },
+  {
+    header: "Fecha de inicio",
+    accessorKey: "startDate",
+    sortingFn: (rowA, rowB) => {
+      const format = "dd-MM-yyyy";
+      const dateA = parse(rowA.original.startDate, format, new Date());
+      const dateB = parse(rowB.original.startDate, format, new Date());
+
+      return dateA.getTime() - dateB.getTime();
+    },
+  },
   { header: "Sucursal", accessorKey: "workBranch" },
   {
     header: "Status",
@@ -51,7 +62,6 @@ const EmployeeTable = () => {
   const { employeesTable } = useEmployeeTable();
   const [data, setData] = useState<EmployeeInTable[]>([]);
   const [sorting, setSorting] = useState<SortingState>([]);
-  //const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [nameFilter, setNameFilter] = useState("");
 
   useEffect(() => {
@@ -106,44 +116,46 @@ const EmployeeTable = () => {
           <thead className="bg-gray-50">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id} className=" border-amber-500 ">
-                {headerGroup.headers.map((header) => (
-                  <th
-                    key={header.id}
-                    colSpan={header.colSpan}
-                    className="px-4 py-3 text-left font-light tracking-wide text-gray-600"
-                  >
-                    {header.isPlaceholder ? null : header.column.getCanSort() ? (
-                      <div
-                        onClick={header.column.getToggleSortingHandler()}
-                        className="inline-flex items-center gap-1 hover:text-primary"
-                      >
-                        {flexRender(
+                {headerGroup.headers.map((header) => {
+                  return (
+                    <th
+                      key={header.id}
+                      colSpan={header.colSpan}
+                      className="px-4 py-3 text-left font-light tracking-wide text-gray-600"
+                    >
+                      {header.isPlaceholder ? null : header.column.getCanSort() ? (
+                        <div
+                          onClick={header.column.getToggleSortingHandler()}
+                          className="inline-flex items-center gap-1 hover:text-primary"
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                          {/* Indicador de orden */}
+                          <svg
+                            viewBox="0 0 20 20"
+                            className={`h-3 w-3 transition ${
+                              header.column.getIsSorted() === "asc"
+                                ? "rotate-180 opacity-100"
+                                : header.column.getIsSorted() === "desc"
+                                ? "opacity-100"
+                                : "opacity-30"
+                            }`}
+                            aria-hidden
+                          >
+                            <path d="M5 7l5 5 5-5" fill="currentColor" />
+                          </svg>
+                        </div>
+                      ) : (
+                        flexRender(
                           header.column.columnDef.header,
                           header.getContext()
-                        )}
-                        {/* Indicador de orden */}
-                        <svg
-                          viewBox="0 0 20 20"
-                          className={`h-3 w-3 transition ${
-                            header.column.getIsSorted() === "asc"
-                              ? "rotate-180 opacity-100"
-                              : header.column.getIsSorted() === "desc"
-                              ? "opacity-100"
-                              : "opacity-30"
-                          }`}
-                          aria-hidden
-                        >
-                          <path d="M5 7l5 5 5-5" fill="currentColor" />
-                        </svg>
-                      </div>
-                    ) : (
-                      flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )
-                    )}
-                  </th>
-                ))}
+                        )
+                      )}
+                    </th>
+                  );
+                })}
               </tr>
             ))}
           </thead>
@@ -155,7 +167,10 @@ const EmployeeTable = () => {
                 className="hover:bg-gray-50 focus-within:bg-gray-50"
               >
                 {row.getVisibleCells().map((cell, i) => {
-                  if (cell.id.includes("actions"))
+                  const isFirstName = cell.id.includes("firstName");
+                  const isActionCell = cell.id.includes("actions");
+
+                  if (isActionCell)
                     return (
                       <td
                         key={i}
@@ -169,6 +184,12 @@ const EmployeeTable = () => {
                       key={cell.id}
                       className="px-4 py-4 whitespace-nowrap text-gray-700 align-middle"
                     >
+                      {isFirstName && (
+                        <input
+                          type="checkbox"
+                          className="mr-2 align-middle w-4 h-4"
+                        />
+                      )}
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

@@ -1,4 +1,3 @@
-// DatePicker.tsx
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -62,12 +61,12 @@ export default function CustomCalendar({
             defaultMonth={selectedDate}
             classNames={{
               today: "text-primary",
-              selected:
-                "border-primary bg-primary rounded-3xl text-white border-0",
+              selected: "bg-primary rounded-3xl text-white border-0",
               root: `${defaultClassNames.root} shadow-lg p-5 outline-0 ring-0`,
               chevron: "fill-main-stone-800",
               caption_label: `${defaultClassNames.caption_label} text-base font-light text-main-stone-700 ml-1`,
-              month_caption: `text-base font-light text-main-stone-700 h-10 pt-3`,
+              month_caption: `text-base font-light text-main-stone-700 h-10 pt-3 mb-3`,
+              day: `${defaultClassNames.day} hover:bg-main-stone-600  rounded-3xl hover:text-main-stone-900`,
             }}
           />
         </div>
