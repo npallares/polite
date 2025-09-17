@@ -10,9 +10,13 @@ import { format } from "date-fns";
 
 interface Props {
   licenseDataHandleSubmit: (to: string, from: string, type: string) => void;
+  addNotificationHandler: () => void;
 }
 
-const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
+const FormLicense = ({
+  licenseDataHandleSubmit,
+  addNotificationHandler,
+}: Props) => {
   const {
     register,
     handleSubmit,
@@ -33,6 +37,7 @@ const FormLicense = ({ licenseDataHandleSubmit }: Props) => {
       format(licenseTo, "dd-MM-yyyy"),
       licenseType
     );
+    addNotificationHandler();
     return reset();
   });
 

@@ -1,5 +1,5 @@
 "use client";
-import { selectEmployees } from "@/store/employees/employeesSlice";
+import { selectEmployees } from "@/store/employeesSlice/employeesSlice";
 import { useAppSelector } from "@/store/store";
 import { useEffect, useState } from "react";
 import MOKDATA from "../../MOK/MOK_EMPLOYESS_2.json";

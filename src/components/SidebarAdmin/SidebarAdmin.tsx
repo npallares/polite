@@ -4,7 +4,6 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import MenuItems from "../MenuItems/MenuItems";
 import { JSX } from "react";
 import { IoCalendarOutline, IoDocumentOutline } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
 
 
 interface IMenuItem {
@@ -43,12 +42,11 @@ const SidebarAdmin = () => {
       className="bg-main-white min-h-screen z-10 text-slate-300 w-77 left-0 overflow-hideen border-amber-400 "
     >
       <div id="nav" className="w-full px-6 pl-4 ">
-        <section className="text-lg md:text-2xl font-bold text-white my-9">
-          <div className=""></div>
+        <section className="flex text-lg md:text-2xl font-bold text-white my-9">
           <span className="text-primary text-2xl pl-4 font-semibold">
             Polite
           </span>
-          <span className="fixed text-xs ml-1 text-brand-600">HR</span>.
+          <span className="text-xs ml-1 pt-0.5 text-brand-600">HR</span>.
         </section>
 
         <p className="text-xs tracking-widest text-main-stone-700 pl-4 mb-3">

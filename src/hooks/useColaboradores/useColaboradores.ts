@@ -1,6 +1,6 @@
 "use client";
 
-import { setNewEmployee } from "@/store/employees/employeesSlice";
+import { setNewEmployee } from "@/store/employeesSlice/employeesSlice";
 import { useAppDispatch } from "@/store/store";
 import {
   AddressData,

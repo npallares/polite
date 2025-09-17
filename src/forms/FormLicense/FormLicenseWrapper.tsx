@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React from "react";
 import FormLicense from "./FormLicense";
 import useLicense from "@/hooks/useLicense/useLicense";
+import useNotification from "@/hooks/useNotification/useNotification";
 
 interface Props {
   id: string;
@@ -9,7 +10,15 @@ interface Props {
 
 const FormLicenseWrapper = ({ id }: Props) => {
   const { licenseDataHandleSubmit } = useLicense({ id });
-  return <FormLicense licenseDataHandleSubmit={licenseDataHandleSubmit} />;
+  const { addNotificationHandler } = useNotification({
+    message: "Has solicitado una licencia",
+  });
+  return (
+    <FormLicense
+      licenseDataHandleSubmit={licenseDataHandleSubmit}
+      addNotificationHandler={addNotificationHandler}
+    />
+  );
 };
 
 export default FormLicenseWrapper;

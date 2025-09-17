@@ -3,7 +3,7 @@
 import {
   selectEmployees,
   setJobsLicenseToEmployee,
-} from "@/store/employees/employeesSlice";
+} from "@/store/employeesSlice/employeesSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import { Licenses } from "@/types/employees";
 import getLicenseByData from "@/utils/getLicenseByData";
@@ -41,7 +41,7 @@ const useLicense = ({ id }: Props): UseLicense => {
         );
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, licenseData, dispatch]);
 
   const licenseDataHandleSubmit = (to: string, from: string, type: string) => {

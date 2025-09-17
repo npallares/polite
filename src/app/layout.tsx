@@ -1,18 +1,18 @@
-// app/layout.tsx
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Providers from "../store/Providers";
+import NotificationCenter from "@/components/NotificationCenter/NotificationCenter";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100","200","300","400","500","600","700","800",],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-poppins",
   display: "swap",
 });
 
 export const metadata = {
-  title: "Mi App",
-  description: "App con Roboto",
+  title: "Polite",
+  description: "Polite",
 };
 
 export default function RootLayout({
@@ -23,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={poppins.className}>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <NotificationCenter />
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { store } from ".";
-import { setEmployees } from "./employees/employeesSlice";
+import { setEmployees } from "./employeesSlice/employeesSlice";
 import MOK from "../MOK/MOK_EMPLOYESS_2.json";
 import { Employee } from "@/types/employees";
 import { loadState } from "@/utils/storage";

@@ -10,10 +10,12 @@ interface Props {
     relationship: string,
     mobilePhone: number
   ) => void;
+  addNotificationHandler: () => void;
 }
 
 const FormNewEntryContactData = ({
   contactDataHandleSubmite,
+  addNotificationHandler,
 }: Props) => {
   const {
     register,
@@ -34,7 +36,7 @@ const FormNewEntryContactData = ({
     if (!dataComprobation) return;
 
     contactDataHandleSubmite(firstName, lastName, relationship, mobilePhone);
-
+    addNotificationHandler();
     reset();
     return redirect("/dashboard_admin/colaboradores/");
   });

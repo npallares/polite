@@ -6,6 +6,7 @@ import FormNewEntryPersonalData from "./FormNewEntryPersonalData";
 import FormNewEntryBankData from "./FormNewEntryBankData";
 import FormNewEntryWorkData from "./FormNewEntryWorkData";
 import FormEntryHeader from "./FormEntryHeader";
+import useNotification from "@/hooks/useNotification/useNotification";
 
 const FormNewEntryWrapper = () => {
   const searchParams = useSearchParams();
@@ -16,6 +17,9 @@ const FormNewEntryWrapper = () => {
     workDataHandlerSubmite,
     contactDataHandleSubmite,
   } = useColaboradores();
+  const { addNotificationHandler } = useNotification({
+    message: "Has incorporado a un nuevo colaborador",
+  });
   const hasStep = searchParams.has("step");
   const step = searchParams.get("step");
   if (hasStep && step === "1")
@@ -48,6 +52,7 @@ const FormNewEntryWrapper = () => {
         <FormEntryHeader step={4} />
         <FormNewEntryContactData
           contactDataHandleSubmite={contactDataHandleSubmite}
+          addNotificationHandler={addNotificationHandler}
         />
       </div>
     );
