@@ -40,7 +40,7 @@ export default function CustomCalendar({
       </label>
       <div
         onClick={() => setOpen(!open)}
-        className="text-sm flex justify-start items-center border w-full rounded-lg border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
+        className="text-sm flex justify-start items-center border w-full rounded-lg border-gray-300 bg-white px-3 py-2 text-main-stone-800 "
       >
         <div className="flex justify-start items-center gap-2 w-full">
           {<Calendar className="w-4 h-4" />}

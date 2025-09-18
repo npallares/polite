@@ -115,7 +115,7 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                     })}
                     id="workBranch"
                     /*  placeholder="Seleccioná una fecha" */
-                    className="w-68 text-sm block  rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-68 text-sm block  rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 outline-none"
                   />
                 </div>
               </div>
@@ -131,7 +131,7 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                 <div className="relative">
                   <input
                     id="area"
-                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none"
                     /*  placeholder="Ingrese nombre y apellido" */
                     {...register("area", {
                       required: true,

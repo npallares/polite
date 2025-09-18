@@ -119,7 +119,7 @@ const FormNewEntryPersonalData = ({
                 <div className="relative">
                   <input
                     id="firstName"
-                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none"
                     {...register("firstName", {
                       required: true,
                     })}
@@ -135,7 +135,7 @@ const FormNewEntryPersonalData = ({
                 <div className="relative">
                   <input
                     id="lastName"
-                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none "
                     /*  placeholder="Ingrese nombre y apellido" */
                     {...register("lastName", {
                       required: true,
@@ -173,7 +173,7 @@ const FormNewEntryPersonalData = ({
                 <div className="relative">
                   <input
                     id="personalEmail"
-                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none"
                     /*  placeholder="Ingrese nombre y apellido" */
                     {...register("personalEmail", {
                       required: true,
@@ -202,7 +202,7 @@ const FormNewEntryPersonalData = ({
                     id="mobilePhone"
                     type="number"
                     /*  placeholder="Seleccioná una fecha" */
-                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
                   />
                 </div>
               </div>
@@ -218,7 +218,7 @@ const FormNewEntryPersonalData = ({
                   <select
                     id="gender"
                     defaultValue=""
-                    className="appearance-none w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="appearance-none w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
                     {...register("gender", { required: true })}
                   >
                     <option value="" disabled>
@@ -255,7 +255,7 @@ const FormNewEntryPersonalData = ({
                     id="country"
                     type="string"
                     /*  placeholder="Seleccioná una fecha" */
-                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
                   />
                 </div>
               </div>
@@ -272,7 +272,7 @@ const FormNewEntryPersonalData = ({
                     {...register("province", { required: true })}
                     id="province"
                     /*  placeholder="Ingrese email" */
-                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
                   />
                 </div>
               </div>
@@ -285,12 +285,12 @@ const FormNewEntryPersonalData = ({
                 <div className="relative">
                   <input
                     id="city"
-                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                    className="w-68 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none "
                     /*  placeholder="Ingrese nombre y apellido" */
                     {...register("city", {
                       required: true,
                     })}
-                  ></input>
+                  />
                 </div>
               </div>
             </section>
@@ -313,7 +313,7 @@ const FormNewEntryPersonalData = ({
                     id="postalCode"
                     type="string"
                     /*  placeholder="Seleccioná una fecha" */
-                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
                   />
                 </div>
               </div>
@@ -330,7 +330,7 @@ const FormNewEntryPersonalData = ({
                     {...register("address", { required: true })}
                     id="address"
                     /*  placeholder="Ingrese email" */
-                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
                   />
                 </div>
               </div>
@@ -348,7 +348,7 @@ const FormNewEntryPersonalData = ({
                     <div className="relative">
                       <input
                         id="Piso"
-                        className="w-31 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                        className="w-31 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none"
                         /*  placeholder="Ingrese nombre y apellido" */
                         {...register("floor", {
                           required: true,
@@ -368,7 +368,7 @@ const FormNewEntryPersonalData = ({
                     <div className="relative">
                       <input
                         id="apartment"
-                        className="w-31 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+                        className="w-31 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none"
                         /*  placeholder="Ingrese nombre y apellido" */
                         {...register("apartment", {
                           required: true,
