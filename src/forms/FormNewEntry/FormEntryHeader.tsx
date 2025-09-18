@@ -26,13 +26,14 @@ const FormEntryHeader = ({ step }: Props) => {
         Nuevo Ingreso
       </h2>
       <div className="flex w-auto">
+        <span className="absolute w-90 h-0.5 bg-main-stone-600 ml-21 mt-5" />
         {steps.map((el, i) => {
           const { label, id, stepInForm } = el;
           const stepCounter = Number(i + 1);
           const isCurrentStep = step === stepInForm;
           const isDone = step > stepInForm;
           return (
-            <div key={id} className="mr-2">
+            <div key={id} className="mr-2 z-10">
               <FormEntryVisualStep
                 index={stepCounter}
                 label={label}
