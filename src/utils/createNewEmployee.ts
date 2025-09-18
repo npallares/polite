@@ -23,7 +23,7 @@ const createNewEmployee = ({
   workData,
   contactData,
 }: Props): Employee => {
-  const { firstName, lastName, birthDate, personalEmail, gender, mobilePhone } =
+  const { firstName, lastName, birthDate, personalEmail, mobilePhone, gender } =
     personalData;
   const { country, province, city, postalCode, address, apartment, floor } =
     addressData;
@@ -46,8 +46,8 @@ const createNewEmployee = ({
       lastName,
       birthDate: birthDateFormated,
       personalEmail,
-      gender,
-      mobilePhone,
+      gender: gender,
+      mobilePhone: mobilePhone,
       country,
       province,
       city,

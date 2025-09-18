@@ -56,13 +56,12 @@ const FormNewEntryContactData = ({
             {/* primera linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="firstName"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Nombre"}
                   <span className="text-red-500 text-[10px]">*</span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="firstName"
@@ -75,10 +74,10 @@ const FormNewEntryContactData = ({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="lastName" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Apellido"}
                   <span className="text-red-500 text-[10px]">*</span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="lastName"
@@ -95,13 +94,12 @@ const FormNewEntryContactData = ({
             {/*segunda linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="relationship"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Vinculo / parentezco"}
                   <span className="text-red-500 text-[10px]">*</span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="relationship"
@@ -114,13 +112,12 @@ const FormNewEntryContactData = ({
                 </div>
               </div>
               <div className="space-y-2">
-                <label
-                  htmlFor="mobilePhone"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Celular"}
                   <span className="text-red-500 text-[10px]">*</span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="mobilePhone"

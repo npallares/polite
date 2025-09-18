@@ -63,15 +63,14 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
             {/* primera linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="workEmail"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Email laboral"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="workEmail"
@@ -103,15 +102,14 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
               </div>
 
               <div className="space-y-2">
-                <label
-                  htmlFor="workBranch"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Sucursal"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     {...register("workBranch", {
@@ -128,12 +126,12 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
             {/*segunda linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label htmlFor="area" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Area"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="area"
@@ -146,12 +144,12 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="rol" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Rol"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="rol"
@@ -164,15 +162,14 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label
-                  htmlFor="reportsTo"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Reporta a"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="reportsTo"

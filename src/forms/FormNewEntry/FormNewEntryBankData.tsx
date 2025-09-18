@@ -50,15 +50,14 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
             {/* Datos fiscales primera linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="contractType"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Tipo de contratación"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="contractType"
@@ -71,12 +70,12 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="cuil" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Cuil "}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="cuil"
@@ -93,12 +92,12 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
             {/* Datos fiscales segunda linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label htmlFor="bank" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Banco"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     {...register("bank", {
@@ -111,12 +110,12 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="cbu" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"CBU"}
                    <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="cbu"

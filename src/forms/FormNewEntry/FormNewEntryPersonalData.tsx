@@ -109,15 +109,14 @@ const FormNewEntryPersonalData = ({
             {/* Información personal primera linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="firstName"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Nombre"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="firstName"
@@ -130,12 +129,12 @@ const FormNewEntryPersonalData = ({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="lastName" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Apellido "}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="lastName"
@@ -167,15 +166,14 @@ const FormNewEntryPersonalData = ({
             {/* Información personal segunda linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="personalEmail"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Email personal"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="personalEmail"
@@ -193,15 +191,14 @@ const FormNewEntryPersonalData = ({
               </div>
 
               <div className="space-y-2">
-                <label
-                  htmlFor="mobilePhone"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Teléfono Celular"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     {...register("mobilePhone", {
@@ -216,17 +213,17 @@ const FormNewEntryPersonalData = ({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="gender" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   Genero
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative gap-2 w-64">
                   <select
                     id="gender"
                     defaultValue=""
-                    className="appearance-none w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800  outline-none"
+                    className="appearance-none w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 outline-none"
                     {...register("gender", { required: true })}
                   >
                     <option value="" disabled>
@@ -251,12 +248,12 @@ const FormNewEntryPersonalData = ({
             {/* Domicilio personal primera linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label htmlFor="country" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Pais"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     {...register("country", {
@@ -271,12 +268,12 @@ const FormNewEntryPersonalData = ({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="province" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Provincia"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative ">
                   <input
                     {...register("province", { required: true })}
@@ -288,12 +285,12 @@ const FormNewEntryPersonalData = ({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="city" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"Ciudad"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     id="city"
@@ -310,15 +307,14 @@ const FormNewEntryPersonalData = ({
             {/* Domicilio personal primera linea */}
             <section className="flex gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="postalCode"
+                <div
                   className="block text-sm font-normal"
                 >
                   {"Codigo postal"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <input
                     {...register("postalCode", {
@@ -333,12 +329,12 @@ const FormNewEntryPersonalData = ({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="address" className="block text-sm font-normal">
+                <div className="block text-sm font-normal">
                   {"address"}
                   <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
-                </label>
+                </div>
                 <div className="relative ">
                   <input
                     {...register("address", { required: true })}
@@ -352,15 +348,14 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2 flex items-end">
                 <div className="w-68 flex items-center justify-between">
                   <div>
-                    <label
-                      htmlFor="floor"
+                    <div
                       className="block text-sm font-normal mb-2"
                     >
                       {"Floor"}
                       <span className="absolute text-red-500 text-[10px] pl-1">
                         *
                       </span>
-                    </label>
+                    </div>
                     <div className="relative">
                       <input
                         id="Piso"
@@ -374,15 +369,14 @@ const FormNewEntryPersonalData = ({
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="apartment"
+                    <div
                       className="block text-sm font-normal mb-2"
                     >
                       {"Departamento"}
                       <span className="absolute text-red-500 text-[10px] pl-1">
                         *
                       </span>
-                    </label>
+                    </div>
                     <div className="relative">
                       <input
                         id="apartment"

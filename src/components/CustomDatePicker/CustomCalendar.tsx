@@ -35,10 +35,10 @@ export default function CustomCalendar({
 
   return (
     <section className="relative inline-block w-full" ref={ref}>
-      <label className="block text-sm font-normal mb-2">
-        {label}{" "}
+      <div className="block text-sm font-normal mb-2">
+        {label}
         <span className="absolute text-red-500 text-[10px] pl-1">*</span>
-      </label>
+      </div>
       <div
         onClick={() => setOpen(!open)}
         className="text-sm flex justify-start items-center border w-full rounded-lg border-gray-300 bg-white px-3 py-2 text-main-stone-800 "
@@ -59,6 +59,7 @@ export default function CustomCalendar({
               onDateChange(date);
               setOpen(false);
             }}
+            endMonth={new Date(2030, 0)}
             defaultMonth={selectedDate}
             classNames={{
               today: "text-primary",
