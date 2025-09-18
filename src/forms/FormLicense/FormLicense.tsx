@@ -56,7 +56,7 @@ const FormLicense = ({
         <div className="relative flex w-92">
           <select
             id="tipo"
-            className="w-92 text-main-stone-800 appearance-none rounded-sm border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
+            className="w-92 text-main-stone-800 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 text-sm outline-none focus:border-gray-500"
             defaultValue=""
             {...register("licenseType", {
               required: true,
