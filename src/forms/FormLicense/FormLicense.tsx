@@ -51,7 +51,8 @@ const FormLicense = ({
       {/* Tipo de licencia */}
       <div className="space-y-2">
         <label htmlFor="tipo" className="block text-sm font-normal">
-          Tipo de licencia <span className="text-red-500 text-[10px]">*</span>
+          Tipo de licencia{" "}
+          <span className="absolute text-red-500 text-[10px] pl-1">*</span>
         </label>
         <div className="relative flex w-92">
           <select

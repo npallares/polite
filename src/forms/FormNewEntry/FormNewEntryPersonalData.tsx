@@ -114,7 +114,9 @@ const FormNewEntryPersonalData = ({
                   className="block text-sm font-normal"
                 >
                   {"Nombre"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -130,7 +132,9 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2">
                 <label htmlFor="lastName" className="block text-sm font-normal">
                   {"Apellido "}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -168,7 +172,9 @@ const FormNewEntryPersonalData = ({
                   className="block text-sm font-normal"
                 >
                   {"Email personal"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -192,7 +198,9 @@ const FormNewEntryPersonalData = ({
                   className="block text-sm font-normal"
                 >
                   {"Teléfono Celular"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -210,7 +218,7 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2">
                 <label htmlFor="gender" className="block text-sm font-normal">
                   Genero
-                  <span className="absolute text-red-500 text-[8px] pl-1">
+                  <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
                 </label>
@@ -245,7 +253,9 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2">
                 <label htmlFor="country" className="block text-sm font-normal">
                   {"Pais"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -263,7 +273,7 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2">
                 <label htmlFor="province" className="block text-sm font-normal">
                   {"Provincia"}
-                  <span className="absolute text-red-500 text-[8px] pl-1">
+                  <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
                 </label>
@@ -280,7 +290,9 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2">
                 <label htmlFor="city" className="block text-sm font-normal">
                   {"Ciudad"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -303,7 +315,9 @@ const FormNewEntryPersonalData = ({
                   className="block text-sm font-normal"
                 >
                   {"Codigo postal"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                  <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -321,7 +335,7 @@ const FormNewEntryPersonalData = ({
               <div className="space-y-2">
                 <label htmlFor="address" className="block text-sm font-normal">
                   {"address"}
-                  <span className="absolute text-red-500 text-[8px] pl-1">
+                  <span className="absolute text-red-500 text-[10px] pl-1">
                     *
                   </span>
                 </label>
@@ -343,7 +357,9 @@ const FormNewEntryPersonalData = ({
                       className="block text-sm font-normal mb-2"
                     >
                       {"Floor"}
-                      <span className="text-red-500 text-[10px]">*</span>
+                      <span className="absolute text-red-500 text-[10px] pl-1">
+                        *
+                      </span>
                     </label>
                     <div className="relative">
                       <input
@@ -363,7 +379,9 @@ const FormNewEntryPersonalData = ({
                       className="block text-sm font-normal mb-2"
                     >
                       {"Departamento"}
-                      <span className="text-red-500 text-[10px]">*</span>
+                      <span className="absolute text-red-500 text-[10px] pl-1">
+                        *
+                      </span>
                     </label>
                     <div className="relative">
                       <input

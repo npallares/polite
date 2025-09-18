@@ -36,7 +36,8 @@ export default function CustomCalendar({
   return (
     <section className="relative inline-block w-full" ref={ref}>
       <label className="block text-sm font-normal mb-2">
-        {label} <span className="text-red-500 text-[8px] pl-1">*</span>
+        {label}{" "}
+        <span className="absolute text-red-500 text-[10px] pl-1">*</span>
       </label>
       <div
         onClick={() => setOpen(!open)}

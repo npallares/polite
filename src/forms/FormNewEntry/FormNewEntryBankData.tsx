@@ -55,7 +55,9 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
                   className="block text-sm font-normal"
                 >
                   {"Tipo de contratación"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -71,7 +73,9 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
               <div className="space-y-2">
                 <label htmlFor="cuil" className="block text-sm font-normal">
                   {"Cuil "}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -91,7 +95,9 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
               <div className="space-y-2">
                 <label htmlFor="bank" className="block text-sm font-normal">
                   {"Banco"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -107,7 +113,9 @@ const FormNewEntryBankData = ({ bankDataHandleSubmite }: Props) => {
               <div className="space-y-2">
                 <label htmlFor="cbu" className="block text-sm font-normal">
                   {"CBU"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input

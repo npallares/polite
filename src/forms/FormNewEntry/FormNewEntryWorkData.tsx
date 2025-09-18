@@ -68,7 +68,9 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                   className="block text-sm font-normal"
                 >
                   {"Email laboral"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -106,7 +108,9 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                   className="block text-sm font-normal"
                 >
                   {"Sucursal"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -126,7 +130,9 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
               <div className="space-y-2">
                 <label htmlFor="area" className="block text-sm font-normal">
                   {"Area"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -142,7 +148,9 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
               <div className="space-y-2">
                 <label htmlFor="rol" className="block text-sm font-normal">
                   {"Rol"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -161,7 +169,9 @@ const FormNewEntryWorkData = ({ workDataHandlerSubmite }: Props) => {
                   className="block text-sm font-normal"
                 >
                   {"Reporta a"}
-                  <span className="text-red-500 text-[10px]">*</span>
+                   <span className="absolute text-red-500 text-[10px] pl-1">
+                    *
+                  </span>
                 </label>
                 <div className="relative">
                   <input
