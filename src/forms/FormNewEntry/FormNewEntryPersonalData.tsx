@@ -5,6 +5,8 @@ import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
 import { redirect } from "next/navigation";
 import CustomCalendar from "@/components/CustomDatePicker/CustomCalendar";
 import { format } from "date-fns";
+import Image from "next/image";
+import Icons from "@/components/Icons";
 
 interface Props {
   personalDataHandleSubmit: (
@@ -207,17 +209,29 @@ const FormNewEntryPersonalData = ({
 
               <div className="space-y-2">
                 <label htmlFor="gender" className="block text-sm font-normal">
-                  {"Genero"}
+                  Genero
                   <span className="absolute text-red-500 text-[8px] pl-1">
                     *
                   </span>
                 </label>
-                <div className="flex flex-col gap-2 w-64">
-                  <input
-                    {...register("gender", { required: true })}
+                <div className="relative gap-2 w-64">
+                  <select
                     id="gender"
-                    /*  placeholder="Ingrese email" */
-                    className="w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    defaultValue=""
+                    className="appearance-none w-68 text-sm block rounded-lg border border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    {...register("gender", { required: true })}
+                  >
+                    <option value="" disabled>
+                      Seleccionar
+                    </option>
+                    <option value="MALE">Masculino</option>
+                    <option value="FEMALE">Femenino</option>
+                    <option value="NO_BINARI">No binario</option>
+                  </select>
+                  <Image
+                    alt="caret"
+                    src={Icons.Caret}
+                    className="absolute right-0 top-4"
                   />
                 </div>
               </div>

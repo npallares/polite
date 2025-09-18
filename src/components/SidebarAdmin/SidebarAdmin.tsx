@@ -1,9 +1,8 @@
 "use client";
 import React from 'react'
-import { LuLayoutDashboard } from "react-icons/lu";
 import MenuItems from "../MenuItems/MenuItems";
 import { JSX } from "react";
-import { IoCalendarOutline, IoDocumentOutline } from "react-icons/io5";
+import { CalendarClock, LayoutDashboard, Users } from 'lucide-react';
 
 
 interface IMenuItem {
@@ -18,23 +17,22 @@ const SidebarAdmin = () => {
   const menuItems: IMenuItem[] = [
     {
       path: "/dashboard_admin/main",
-      icon: <LuLayoutDashboard className="w-4 h-4" />,
+      icon: <LayoutDashboard className="w-4 h-4" />,
       title: "Home",
       id: "main",
     },
     {
       path: "/dashboard_admin/main",
-      icon: <IoCalendarOutline className="w-4 h-4" />,
+      icon: <CalendarClock className="w-4 h-4" />,
       title: "Aprobaciones",
       id: "license",
     },
     {
       path: "/dashboard_admin/colaboradores",
-      icon: <IoDocumentOutline className="w-4 h-4" />,
+      icon: <Users className="w-4 h-4" />,
       title: "Colaboradores",
       id: "colaboradores",
     },
-    
   ];
   return (
     <div

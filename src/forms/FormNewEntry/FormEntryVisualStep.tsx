@@ -1,5 +1,5 @@
+import { Check } from "lucide-react";
 import React from "react";
-import { IoIosCheckmark } from "react-icons/io";
 
 interface Props {
   label: string;
@@ -14,14 +14,14 @@ const FormEntryVisualStep = ({  label, index, isCurrentStep, isDone }: Props) =>
       <span
         className={`${
           isDone ? "bg-primary" : ""
-        } w-10 h-10 border-2 border-primary text-primary rounded-3xl flex justify-center items-center mb-3 text-lg font-semibold`}
+        } w-10 h-10 border-3 border-primary text-primary rounded-3xl flex justify-center items-center mb-3 text-lg font-semibold`}
       >
-        {isDone ? <IoIosCheckmark className="h-15 w-15 text-white" /> : index}
+        {isDone ? <Check className="h-6 w-6 text-white" /> : index}
       </span>
       <span
         className={`${
-          isCurrentStep ? "text-primary" : "text-stone-700"
-        } flex justify-center items-center text-center`}
+          isCurrentStep || isDone ? "text-primary" : "text-main-stone-800"
+        } flex justify-center items-center text-center font-semibold`}
       >
         {label}
       </span>

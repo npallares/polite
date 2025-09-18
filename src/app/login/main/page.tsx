@@ -1,7 +1,6 @@
+import { CircleArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { AiOutlineLogin } from "react-icons/ai";
-import { IoIosLogIn } from "react-icons/io";
 
 const mainPage = () => {
   return (
@@ -12,7 +11,7 @@ const mainPage = () => {
             className="flex flex-1 items-center mr-2"
             href="/dashboard/license/UNO-1"
           >
-            <IoIosLogIn className="mr-2" />
+            <CircleArrowRight className="mr-2" />
             <span>Licencias</span>
           </Link>
         </div>
@@ -21,7 +20,7 @@ const mainPage = () => {
             className="flex flex-1 items-center mr-2"
             href="/dashboard_admin/colaboradores"
           >
-            <AiOutlineLogin className="mr-2" />
+            <CircleArrowRight className="mr-2" />
             <span>Colaboradores</span>
           </Link>
         </div>

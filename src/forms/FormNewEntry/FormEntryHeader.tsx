@@ -1,6 +1,6 @@
 import React from "react";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import FormEntryVisualStep from "./FormEntryVisualStep";
+import { ArrowLeft } from "lucide-react";
 
 interface Props {
   step: number;
@@ -19,7 +19,7 @@ const FormEntryHeader = ({ step }: Props) => {
   return (
     <section className="ml-8 mb-8">
       <div className="flex justify-start items-center text-sm mt-6 text-main-stone-900 ">
-        <IoIosArrowRoundBack className="w-6 h-6" />
+        <ArrowLeft className="w-5 h-5 mr-2" />
         {"Colaboradores"}
       </div>
       <h2 className="text-xl font-semibold text-main-stone-900 mb-10">

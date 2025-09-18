@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
-import { IoCalendarOutline } from "react-icons/io5";
+import { Calendar } from "lucide-react";
 
 type CustomCalendarProps = {
   icon?: React.ReactNode;
@@ -40,10 +40,10 @@ export default function CustomCalendar({
       </label>
       <div
         onClick={() => setOpen(!open)}
-        className="text-sm flex justify-start items-center border w-full rounded-sm border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
+        className="text-sm flex justify-start items-center border w-full rounded-lg border-gray-300 bg-white px-3 py-2 text-main-stone-800 focus:border-blue-500"
       >
         <div className="flex justify-start items-center gap-2 w-full">
-          {<IoCalendarOutline className="w-4 h-4" />}
+          {<Calendar className="w-4 h-4" />}
           {selectedDate ? format(selectedDate, "dd-MM-yyyy") : "DD-MM-AA"}
         </div>
       </div>

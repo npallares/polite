@@ -12,8 +12,8 @@ import {
 } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
 import StatusPill from "../StatusPill/StatusPill";
-import { IoChevronDownSharp } from "react-icons/io5";
 import { parse } from "date-fns";
+import { ChevronDown } from "lucide-react";
 
 export type EmployeeInTable = {
   id: string;
@@ -206,7 +206,7 @@ const EmployeeTable = () => {
         <div className="flex items-center justify-center p-3">
           <button className="flex cursor-pointer items-center h-12 border rounded border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
             <span>Cargar más</span>
-            <IoChevronDownSharp className="w-5 h-5 ml-2" />
+            <ChevronDown className="w-5 h-5 ml-2" />
           </button>
         </div>
       </div>
